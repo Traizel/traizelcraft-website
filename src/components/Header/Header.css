@@ -1,0 +1,29 @@
+div img {
+    width: 150px;
+}
+
+a img {
+    width: 30px;
+}
+
+button {
+    margin: 5px;
+}
+
+img {
+    margin: 5px;
+}
+
+.header-description {
+    display: inline-flex;
+    margin: 10px;
+}
+
+.header-description h4 {
+    margin: 10px;
+    padding: 20px;
+}
+
+.page-links {
+    display: inline-block;
+}
