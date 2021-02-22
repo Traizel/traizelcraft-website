@@ -33,12 +33,12 @@
     font-size: 100px;
 }
 
-.home-page-image-2 img {
+.home-page-image img {
     border-radius: 10px;
     width: 80%;
 }
 
-.home-page-image-2 {
+.home-page-image {
     text-align: center;
 }
 
@@ -58,4 +58,22 @@
 .social-media-links-container img {
     margin: 20px;
     width: 50px;
+}
+
+.videos-col {
+    display: inline-block;
+}
+
+.videos-container {
+    background-color: rgb(245, 237, 237);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 5%;
+    text-align: center;
+    font-size: 40px;
+}
+
+.videos-container iframe {
+    margin: 20px;
+    border-radius: 5px;
 }

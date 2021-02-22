@@ -4,13 +4,14 @@ import Thread from '../Forum/Thread/Thread';
 import Post from '../Forum/Post/Post';
 import Header from '../Header/Header';
 import Home from '../Home/Home';
+import Footer from '../Footer/Footer';
 import './App.css';
 import { HashRouter as Router, Route } from "react-router-dom";
 
 function App() {
 
   return (
-    <div >
+    <div>
       <Router>
           <Header />
           <br />
@@ -19,6 +20,7 @@ function App() {
           <Route path="/thread" component={Thread} />
           <Route path="/post" component={Post} />
       </Router>
+      <Footer />
     </div>
   );
 }

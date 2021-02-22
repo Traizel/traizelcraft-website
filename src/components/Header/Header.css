@@ -21,15 +21,19 @@ img {
 }
 
 .header-description {
-    display: inline-flex;
-    margin: 10px;
+    margin: 5px;
 }
 
 .header-description h4 {
-    margin: 10px;
-    padding: 20px;
+    margin: 5px;
+    padding: 5px;
 }
 
-.page-links {
-    display: inline-block;
+.log-in-media-links {
+    float: right;
+    margin: 10px;
+}
+
+.log-in-media-links button {
+    height: 30px;
 }

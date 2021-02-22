@@ -21,11 +21,11 @@ function Home() {
                     Join the Discord and follow TraizelCraft on Twiter and Insta for more updates!</p>
             </div>
             <br />
-            <div className='home-page-image-2'>
+            <div className='home-page-image'>
                 <img src="./images/JungleTree1.JPG" />
             </div>
             <div className='social-media-links-container'>
-                <h1>Social Media Links</h1>
+                <h1>Follow Us!</h1>
                 <div className='social-media-links-col'>
                     <div className='social-media-links-row'>
                         <a href="https://discord.com/invite/qWssnBP" target="_blank"><img src='/images/discord.png' /></a>
@@ -48,6 +48,36 @@ function Home() {
                         <a href="https://merch.streamelements.com/traizel_gaming" target="_blank"><img src='/images/merchandise.png' /></a>
                     </div>
                 </div>
+            </div>
+            <div className='home-page-image'>
+                <img src="./images/Mansion1.JPG" />
+            </div>
+            <br />
+            <div className='videos-container'>
+                <h1>Videos</h1>
+                <div className='videos-col'>
+                    <div className='videos-row'>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/9GwnmJY7s9I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div className='videos-row'>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/fXNzRMS1s34" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div className='videos-row'>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/AXK3EmoT9i4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div className='videos-col'>
+                    <div className='videos-row'>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ujSxiUIVdMM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div className='videos-row'>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZO3V7P1G-Ag" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div className='videos-row'>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/bXZ5kBYf21o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <h3>More Videos on our YouTube!</h3>
             </div>
         </>
     );
