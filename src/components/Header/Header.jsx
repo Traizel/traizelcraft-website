@@ -4,7 +4,7 @@ import './Header.css';
 function Header() {
 
     return (
-        <>
+        <header>
             <div className='header-description'>
                 <img src='/images/JungleTree1.JPG'/>
                 <h4>Explore | Discover | Conquer | Become Legend</h4>
@@ -27,7 +27,7 @@ function Header() {
             <a href="https://www.youtube.com/c/Traizel" target="_blank"><img src='/images/youtube.png' /></a>
             <br />
             <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-        </>
+        </header>
     );
 }
 
