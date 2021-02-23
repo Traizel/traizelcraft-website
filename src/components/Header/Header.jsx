@@ -1,7 +1,9 @@
-import { HashRouter as Router, Link } from "react-router-dom";
+import { useHistory } from 'react-router-dom'
 import './Header.css';
 
 function Header() {
+
+    const history = useHistory()
 
     return (
         <header>
@@ -12,23 +14,22 @@ function Header() {
                 <br />
             </div>
             <div className='header-buttons'>
-            <Router>
                 <div className='page-links'>
-                    <button><Link to="/">Home</Link></button>
-                    <button><Link to="/events">Events</Link></button>
-                    <button><Link to="/news">News</Link></button>
-                    <button><Link to="/faq">FAQ</Link></button>
-                    <button><Link to="/wiki">Wiki</Link></button>
-                    <button><Link to="/forum">Forums</Link></button>
-                    <button><Link to="/downloads">Downloads</Link></button>
+                    <button onClick={() => { history.push('/') }}>Home</button>
+                    <button onClick={() => { history.push('/events') }}>Events</button>
+                    <button onClick={() => { history.push('/news') }}>News</button>
+                    <button onClick={() => { history.push('/faq') }}>FAQ</button>
+                    <button onClick={() => { history.push('/wiki') }}>Wiki</button>
+                    <button onClick={() => { history.push('/forum') }}>Forums</button>
+                    <button onClick={() => { history.push('/downloads') }}>Downloads</button>
                 </div>
-            </Router>
             <div className='log-in-media-links'>
                 <a href="https://discord.com/invite/qWssnBP" target="_blank"><img src='/images/discord.png' /></a>
                 <a href="https://twitter.com/traizelcraft" target="_blank"><img src='/images/twitter.png' /></a>
                 <a href="https://www.instagram.com/traizelcraft/" target="_blank"><img src='/images/instagram.png' /></a>
                 <a href="https://www.youtube.com/c/Traizel" target="_blank"><img src='/images/youtube.png' /></a>
-                <button>Log In</button>
+                <button onClick={() => { history.push('/login') }}>Log In</button>
+                <button onClick={() => { history.push('/register') }}>Register</button>
             </div>
             </div>
             <br />
