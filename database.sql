@@ -16,6 +16,7 @@ CREATE TABLE "event" (
 	"id" serial NOT NULL,
 	"title" TEXT NOT NULL,
 	"start_time" TIME NOT NULL,
+	"start_date" DATE NOT NULL,
 	"description" TEXT NOT NULL,
 	"author_id" integer NOT NULL,
 	CONSTRAINT "event_pk" PRIMARY KEY ("id")
@@ -88,6 +89,7 @@ CREATE TABLE "signups" (
 
 
 
+
 ALTER TABLE "event" ADD CONSTRAINT "event_fk0" FOREIGN KEY ("author_id") REFERENCES "user"("id");
 
 ALTER TABLE "news" ADD CONSTRAINT "news_fk0" FOREIGN KEY ("author_id") REFERENCES "user"("id");
@@ -100,7 +102,5 @@ ALTER TABLE "forum_category" ADD CONSTRAINT "forum_category_fk0" FOREIGN KEY ("a
 ALTER TABLE "forum_comments" ADD CONSTRAINT "forum_comments_fk0" FOREIGN KEY ("author_id") REFERENCES "user"("id");
 ALTER TABLE "forum_comments" ADD CONSTRAINT "forum_comments_fk1" FOREIGN KEY ("thread_id") REFERENCES "forum_thread"("id");
 
-
 ALTER TABLE "signups" ADD CONSTRAINT "signups_fk0" FOREIGN KEY ("user_id") REFERENCES "user"("id");
 ALTER TABLE "signups" ADD CONSTRAINT "signups_fk1" FOREIGN KEY ("event_id") REFERENCES "event"("id");
-

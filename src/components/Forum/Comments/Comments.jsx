@@ -4,9 +4,9 @@ import { useEffect } from 'react';
 
 function ForumPostItem() {
 
-    const currentThread = useSelector(store => store.CurrentThreadReducer);
+    const currentThread = useSelector(store => store.current);
     console.log(currentThread);
-    const comments = useSelector(store => store.ForumCommentsReducer);
+    const comments = useSelector(store => store.form);
     console.log(comments);
     const dispatch = useDispatch();
 

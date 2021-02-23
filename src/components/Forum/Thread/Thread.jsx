@@ -4,8 +4,8 @@ import ThreadItem from './ThreadItem';
 
 function Thread() {
 
-    const currentCategory = useSelector(store => store.CurrentCategoryReducer);
-    const threads = useSelector(store => store.ForumThreadsReducer);
+    const currentCategory = useSelector(store => store.current);
+    const threads = useSelector(store => store.form);
     console.log(currentCategory);
     console.log(threads);
     const dispatch = useDispatch();

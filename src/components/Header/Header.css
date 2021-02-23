@@ -20,6 +20,11 @@ img {
     margin: 5px;
 }
 
+.header-buttons {
+    background-color: rgb(187, 9, 9, 0.795);
+    border-radius: 20px;
+}
+
 .header-description {
     margin: 5px;
 }
@@ -32,8 +37,14 @@ img {
 .log-in-media-links {
     float: right;
     margin: 10px;
+    display: inline-block;
 }
 
 .log-in-media-links button {
     height: 30px;
+}
+
+.user-info {
+    display: inline-flex;
+    margin: 10px;
 }

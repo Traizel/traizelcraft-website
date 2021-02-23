@@ -4,7 +4,7 @@ import Comments from '../Comments/Comments';
 
 function Post() {
 
-    const users = useSelector(store => store.GetUsersReducer)
+    const users = useSelector(store => store.allusers)
     console.log(users);
     const dispatch = useDispatch();
 

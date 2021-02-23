@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 
 function ForumThreadsItem({ thread }) {
 
-    const users = useSelector(store => store.GetUsersReducer)
+    const users = useSelector(store => store.allusers)
     console.log(users);
     const dispatch = useDispatch();
     const history = useHistory()

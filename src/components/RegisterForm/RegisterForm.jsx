@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom'
 function RegisterForm() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const errors = useSelector((store) => store.registrationMessage);
+    const errors = useSelector((store) => store.errors);
     const dispatch = useDispatch();
     const history = useHistory()
 
@@ -19,7 +19,6 @@ function RegisterForm() {
                 password: password,
             },
         });
-        history.push('/');
     }; // end registerUser
 
     return (

@@ -30,7 +30,7 @@ app.use(passport.session());
 
 // Routes
 app.use('/api/forum', forumRouter);
-app.use('/api/users', userRouter);
+app.use('/api/user', userRouter);
 app.use('/api/threads', threadRouter);
 app.use('/api/comments', commentsRouter);
 

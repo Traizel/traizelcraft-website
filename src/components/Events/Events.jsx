@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 function Events() {
 
     const history = useHistory();
-    const user = useSelector(store => store.userReducer);
+    const user = useSelector(store => store.user);
     const dispatch = useDispatch();
 
 

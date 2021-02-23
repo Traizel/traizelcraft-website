@@ -14,7 +14,7 @@ import { useSelector } from 'react-redux';
 // and by checking req.user for authorization
 
 function ProtectedRoute(props) {
-    const user = useSelector((store) => store.userReducer);
+    const user = useSelector((store) => store.user);
 
     // Using destructuring, this takes ComponentToProtect from component
     // prop and grabs all other props to pass them along to Route

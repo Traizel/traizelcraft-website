@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom'
 function LoginForm() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const errors = useSelector(store => store.loginMessage);
+    const errors = useSelector(store => store.errors);
     const dispatch = useDispatch();
     const history = useHistory()
 
@@ -21,7 +21,6 @@ function LoginForm() {
                     password: password,
                 },
             });
-            history.push('/');
         } else {
             dispatch({ type: 'LOGIN_INPUT_ERROR' });
         }
