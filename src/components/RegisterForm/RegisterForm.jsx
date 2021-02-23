@@ -19,6 +19,7 @@ function RegisterForm() {
                 password: password,
             },
         });
+        history.push('/');
     }; // end registerUser
 
     return (

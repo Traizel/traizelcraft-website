@@ -1,9 +1,14 @@
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './Header.css';
+import { useDispatch } from 'react-redux';
 
 function Header() {
 
-    const history = useHistory()
+    const history = useHistory();
+    const user = useSelector(store => store.userReducer);
+    const dispatch = useDispatch();
+    
 
     return (
         <header>
@@ -28,8 +33,19 @@ function Header() {
                 <a href="https://twitter.com/traizelcraft" target="_blank"><img src='/images/twitter.png' /></a>
                 <a href="https://www.instagram.com/traizelcraft/" target="_blank"><img src='/images/instagram.png' /></a>
                 <a href="https://www.youtube.com/c/Traizel" target="_blank"><img src='/images/youtube.png' /></a>
+                {
+                user.id
+                ?
+                <>
+                <h4>{user.username}</h4>
+                <button onClick={() => {dispatch({ type: 'LOGOUT' })}}>Logout</button>
+                </>
+                :
+                <>
                 <button onClick={() => { history.push('/login') }}>Log In</button>
                 <button onClick={() => { history.push('/register') }}>Register</button>
+                </>
+                }
             </div>
             </div>
             <br />

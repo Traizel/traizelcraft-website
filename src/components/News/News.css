@@ -1,0 +1,14 @@
+.news-page-image img {
+    width: 40%;
+    border-radius: 10px;
+}
+
+.news-section {
+    text-align: center;
+    font-size: 200%;
+}
+
+p {
+    margin: 10px 15%;
+    font-size: 24px;
+}

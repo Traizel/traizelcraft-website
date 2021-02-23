@@ -20,7 +20,7 @@ function* fetchForumCategories() {
 
 function* fetchUsers() {
     try {
-        const usersResponse = yield axios.get('/api/users');
+        const usersResponse = yield axios.get('/api/users/allusers');
         yield put({ type: 'SET_USERS', payload: usersResponse.data});
     } catch (error) {
         console.log(`Error fetching users`, error);
@@ -93,7 +93,7 @@ function* logoutUser(action) {
     // allow the server session to recognize the user
     // when the server recognizes the user session
     // it will end the session
-    yield axios.post('/api/user/logout', config);
+    yield axios.post('/api/users/logout', config);
 
     // now that the session has ended on the server
     // remove the client-side user object to let

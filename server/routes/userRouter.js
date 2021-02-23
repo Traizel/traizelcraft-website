@@ -48,20 +48,20 @@ router.post('/logout', (req, res) => {
   res.sendStatus(200);
 });
 
-// router.get('/', (req, res) => {
-//   // return all categories
-//   console.log('Getting Users..');
-//   const query = `SELECT * FROM "user"`;
-//   pool
-//     .query(query)
-//     .then((result) => {
-//       console.log(result.rows);
-//       res.send(result.rows);
-//     })
-//     .catch((error) => {
-//       console.log(`Error on query ${error}`);
-//       res.sendStatus(500);
-//     });
-// });
+router.get('/allusers', (req, res) => {
+  // return all categories
+  console.log('Getting Users..');
+  const query = `SELECT * FROM "user"`;
+  pool
+    .query(query)
+    .then((result) => {
+      console.log(result.rows);
+      res.send(result.rows);
+    })
+    .catch((error) => {
+      console.log(`Error on query ${error}`);
+      res.sendStatus(500);
+    });
+});
 
 module.exports = router;

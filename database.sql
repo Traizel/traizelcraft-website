@@ -77,6 +77,16 @@ CREATE TABLE "forum_comments" (
 
 
 
+CREATE TABLE "signups" (
+	"id" serial NOT NULL,
+	"user_id" integer NOT NULL,
+	"event_id" integer NOT NULL,
+	CONSTRAINT "signups_pk" PRIMARY KEY ("id")
+) WITH (
+  OIDS=FALSE
+);
+
+
 
 ALTER TABLE "event" ADD CONSTRAINT "event_fk0" FOREIGN KEY ("author_id") REFERENCES "user"("id");
 
@@ -89,3 +99,8 @@ ALTER TABLE "forum_category" ADD CONSTRAINT "forum_category_fk0" FOREIGN KEY ("a
 
 ALTER TABLE "forum_comments" ADD CONSTRAINT "forum_comments_fk0" FOREIGN KEY ("author_id") REFERENCES "user"("id");
 ALTER TABLE "forum_comments" ADD CONSTRAINT "forum_comments_fk1" FOREIGN KEY ("thread_id") REFERENCES "forum_thread"("id");
+
+
+ALTER TABLE "signups" ADD CONSTRAINT "signups_fk0" FOREIGN KEY ("user_id") REFERENCES "user"("id");
+ALTER TABLE "signups" ADD CONSTRAINT "signups_fk1" FOREIGN KEY ("event_id") REFERENCES "event"("id");
+
