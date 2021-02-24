@@ -74,7 +74,7 @@ function Home() {
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/ZO3V7P1G-Ag" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     </div>
                     <div className='videos-row'>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/bXZ5kBYf21o" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/wuho_o1cv9A" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     </div>
                 </div>
                 <h3>More Videos on our YouTube!</h3>

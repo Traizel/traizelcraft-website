@@ -7,7 +7,9 @@ function Events() {
 
     const history = useHistory();
     const user = useSelector(store => store.user);
+    const events = useSelector(store => store.event);
     const dispatch = useDispatch();
+    console.log('events', events);
 
 
     return (

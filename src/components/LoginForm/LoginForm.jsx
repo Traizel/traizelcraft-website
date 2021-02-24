@@ -61,7 +61,6 @@ function LoginForm() {
             <div>
                 <input className="btn" type="submit" name="submit" value="Log In" />
             </div>
-            <button onClick={() => { history.push('/') }}>Go Back</button>
         </form>
     );
 }

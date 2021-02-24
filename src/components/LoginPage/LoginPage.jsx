@@ -10,6 +10,7 @@ function LoginPage() {
       <LoginForm />
 
       <center>
+        <h3>Not a member?</h3>
         <button
           type="button"
           className="btn btn_asLink"
@@ -20,6 +21,7 @@ function LoginPage() {
           Register
         </button>
       </center>
+      <button onClick={() => { history.goBack() }}>Go Back</button>
     </div>
   );
 }

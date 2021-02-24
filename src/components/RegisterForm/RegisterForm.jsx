@@ -56,7 +56,6 @@ function RegisterForm() {
             <div>
                 <input className="btn" type="submit" name="submit" value="Register" />
             </div>
-            <button onClick={() => { history.push('/') }}>Go Back</button>
         </form>
     );
 }
