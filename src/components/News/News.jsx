@@ -1,5 +1,6 @@
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import './News.css';
 import { useDispatch } from 'react-redux';
 
@@ -7,7 +8,13 @@ function News() {
 
     const history = useHistory();
     const user = useSelector(store => store.user);
+    const news = useSelector(store => store.news);
+    console.log('News:', news);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch({ type: 'GET_NEWS' });
+    }, [])
 
 
     return (

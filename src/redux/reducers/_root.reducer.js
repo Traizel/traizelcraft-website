@@ -4,7 +4,8 @@ import user from './user.reducer';
 import form from './form.reducer';
 import current from './current.reducer';
 import allusers from './allusers.reducer';
-import event from './events.reducer';
+import events from './events.reducer';
+import news from './news.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
   form,
   current,
   allusers,
-  event,
+  events,
+  news,
 });
 
 export default rootReducer;

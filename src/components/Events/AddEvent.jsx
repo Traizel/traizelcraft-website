@@ -30,7 +30,7 @@ function AddEvent() {
             });
             alert('Event created successfully!');
             history.goBack();
-        }; // end registerUser
+        }; // end createEvent
 
 
     return (

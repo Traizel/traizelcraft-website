@@ -14,6 +14,7 @@ const userRouter = require('./routes/userRouter');
 const threadRouter = require('./routes/threadRouter');
 const commentsRouter = require('./routes/commentsRouter');
 const eventsRouter = require('./routes/eventsRouter');
+const newsRouter = require('./routes/newsRouter');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -35,6 +36,7 @@ app.use('/api/user', userRouter);
 app.use('/api/threads', threadRouter);
 app.use('/api/comments', commentsRouter);
 app.use('/api/events', eventsRouter);
+app.use('/api/news', newsRouter);
 
 // Listen
 app.listen(PORT, () => {

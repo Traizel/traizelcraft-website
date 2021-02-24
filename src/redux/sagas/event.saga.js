@@ -20,9 +20,9 @@ function* fetchEvents() {
     }
 }
 
-function* loginSaga() {
+function* eventSaga() {
     yield takeEvery('ADD_EVENT', addEvent);
     yield takeEvery('GET_EVENTS', fetchEvents);
 }
 
-export default loginSaga;
+export default eventSaga;

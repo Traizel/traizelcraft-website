@@ -1,15 +1,21 @@
 import { useHistory } from 'react-router-dom';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import './Events.css';
 import { useDispatch } from 'react-redux';
+import EventsItem from './EventItem';
 
 function Events() {
 
     const history = useHistory();
     const user = useSelector(store => store.user);
-    const events = useSelector(store => store.event);
+    const events = useSelector(store => store.events);
     const dispatch = useDispatch();
     console.log('events', events);
+
+    useEffect(() => {
+        dispatch({ type: 'GET_EVENTS' });
+    }, [])
 
 
     return (
@@ -26,7 +32,9 @@ function Events() {
             </div>
             <button onClick={() => {history.push('/add-event')}}>New Event</button>
             <div className='events-list'>
-
+                {events.getEvents.map(event =>
+                    (<EventsItem event={event} key={event.id} />)
+                )}
             </div>
         </div>
     );

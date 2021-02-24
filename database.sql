@@ -30,6 +30,8 @@ CREATE TABLE "news" (
 	"id" serial NOT NULL,
 	"title" TEXT NOT NULL,
 	"description" TEXT NOT NULL,
+	"img_name" TEXT NOT NULL,
+	"img_url" TEXT NOT NULL,
 	"author_id" integer NOT NULL,
 	CONSTRAINT "news_pk" PRIMARY KEY ("id")
 ) WITH (
