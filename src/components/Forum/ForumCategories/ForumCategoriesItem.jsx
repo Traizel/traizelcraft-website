@@ -4,8 +4,6 @@ import { useHistory } from 'react-router-dom'
 
 function ForumCategoriesItem({ category }) {
 
-    const users = useSelector(store => store.allusers)
-    console.log(users);
     const dispatch = useDispatch();
     const history = useHistory()
 

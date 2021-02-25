@@ -1,9 +1,13 @@
 const express = require('express');
+const {
+  rejectUnauthenticated,
+} = require('../modules/authentication-middleware');
 const pool = require('../modules/pool');
 
 const router = express.Router();
 
-router.post('/', (req, res) => {
+router.post('/', rejectUnauthenticated, (req, res) => {
+  if (req.user.access_level >= 3) {
   const news = req.body.news;
   console.log('New news incoming:', news);
 
@@ -16,6 +20,7 @@ router.post('/', (req, res) => {
       console.log('News creation failed: ', err);
       res.sendStatus(500);
     });
+  }
 });
 
 router.get('/', (req, res) => {

@@ -1,9 +1,12 @@
 const express = require('express');
+const {
+  rejectUnauthenticated,
+} = require('../modules/authentication-middleware');
 const pool = require('../modules/pool');
 
 const router = express.Router();
 
-router.post('/', (req, res) => {
+router.post('/', rejectUnauthenticated, (req, res) => {
   const event = req.body.event;
   console.log('New event incoming:', event);
 
@@ -18,7 +21,8 @@ router.post('/', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
+    if (req.user.access_level >= 1) {
   const id = req.params.id;
   console.log('Delete event with id:', id);
 
@@ -31,9 +35,13 @@ router.delete('/:id', (req, res) => {
       console.log('Event delete failed: ', err);
       res.sendStatus(500);
     });
+    } else {
+      res.sendStatus(403);
+    }
 });
 
-router.delete('/signup/:id', (req, res) => {
+router.delete('/signup/:id', rejectUnauthenticated, (req, res) => {
+    if (req.user.access_level >= 1) {
   const id = req.params.id;
   console.log('Delete signups with id:', id);
 
@@ -46,9 +54,10 @@ router.delete('/signup/:id', (req, res) => {
       console.log('Signups delete failed: ', err);
       res.sendStatus(500);
     });
+    }
 });
 
-router.get('/', (req, res) => {
+router.get('/', rejectUnauthenticated, (req, res) => {
   // return all categories
   console.log('Getting Events..');
   const query = `SELECT * FROM event`;
@@ -64,7 +73,8 @@ router.get('/', (req, res) => {
     });
 });
 
-router.post('/getsignups', (req, res) => {
+router.post('/getsignups', rejectUnauthenticated, (req, res) => {
+    if (req.user.access_level >= 1) {
   const currentEvent = req.body.event;
   // return all categories
   console.log('Getting Sign Up Event..');
@@ -79,9 +89,10 @@ router.post('/getsignups', (req, res) => {
       console.log(`Error on query ${error}`);
       res.sendStatus(500);
     });
+    }
 });
 
-router.post('/signup', (req, res) => {
+router.post('/signup', rejectUnauthenticated, (req, res) => {
   const signup = req.body.signup;
   console.log('New signup incoming:', signup);
 
@@ -96,7 +107,8 @@ router.post('/signup', (req, res) => {
     });
 });
 
-router.post('/getdetails', (req, res) => {
+router.post('/getdetails', rejectUnauthenticated, (req, res) => {
+    if (req.user.access_level >= 1) {
   const currentEvent = req.body.event;
   // return all categories
   console.log('Getting Sign Up Event..');
@@ -111,6 +123,7 @@ router.post('/getdetails', (req, res) => {
       console.log(`Error on query ${error}`);
       res.sendStatus(500);
     });
+    }
 });
 
 

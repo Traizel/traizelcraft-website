@@ -12,6 +12,9 @@ import News from '../News/News';
 import AddEvent from '../Events/AddEvent';
 import AddNews from '../News/AddNews';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import ProtectedAdminRoute from '../ProtectedRoute/ProtectedAdminRoute';
+import ProtectedModRoute from '../ProtectedRoute/ProtectedModRoute';
+import ProtectedColabRoute from '../ProtectedRoute/ProtectedColabRoute';
 import UserPage from '../UserPage/UserPage';
 import SignUp from '../Events/SignUp';
 import EventDetails from '../Events/EventDetails';
@@ -84,21 +87,21 @@ function App() {
             <UserPage />
           </ProtectedRoute>
 
-          <ProtectedRoute
-            // logged in shows add event else shows LoginPage
+          <ProtectedColabRoute
+            // logged in and a colaborator shows add event else shows LoginPage
             exact
             path="/add-event"
           >
             <AddEvent />
-          </ProtectedRoute>
+          </ProtectedColabRoute>
 
-          <ProtectedRoute
+          <ProtectedAdminRoute
             // logged in shows add article else shows LoginPage
             exact
             path="/add-article"
           >
             <AddNews />
-          </ProtectedRoute>
+          </ProtectedAdminRoute>
 
           {/* When a value is supplied for the authRedirect prop the user will
             be redirected to the path supplied when logged in, otherwise they will
@@ -144,13 +147,13 @@ function App() {
             <SignUp />
           </ProtectedRoute>
 
-          <ProtectedRoute
+          <ProtectedColabRoute
             // logged in shows UserPage else shows LoginPage
             exact
             path="/event-details"
           >
             <EventDetails />
-          </ProtectedRoute>
+          </ProtectedColabRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>

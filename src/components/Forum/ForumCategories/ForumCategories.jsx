@@ -4,7 +4,7 @@ import ForumCategoriesItem from './ForumCategoriesItem';
 
 function ForumCategories() {
 
-    const categories = useSelector(store => store.form)
+    const categories = useSelector(store => store.form.ForumCategoriesReducer)
     console.log(categories);
     const dispatch = useDispatch();
 

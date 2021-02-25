@@ -30,10 +30,21 @@ function* fetchComments(action) {
     }
 }
 
+function* addThread(action) {
+    try {
+        console.log(action.payload);
+        const threadResponse = yield axios.post('/api/threads/add', {thread: action.payload});
+        yield put({ type: 'SET_THREADS', payload: threadResponse.data.category_id});
+    } catch (error) {
+        console.log(`Error adding thread`, error);
+    }
+}
+
 function* loginSaga() {
     yield takeEvery('FETCH_CATEGORIES', fetchForumCategories);
     yield takeEvery('FETCH_THREADS', fetchThreads);
     yield takeEvery('FETCH_COMMENTS', fetchComments);
+    yield takeEvery('ADD_THREAD', addThread);
 }
 
 export default loginSaga;

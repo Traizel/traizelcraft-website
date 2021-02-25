@@ -3,7 +3,6 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import form from './form.reducer';
 import current from './current.reducer';
-import allusers from './allusers.reducer';
 import events from './events.reducer';
 import news from './news.reducer';
 
@@ -18,7 +17,6 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   form,
   current,
-  allusers,
   events,
   news,
 });
