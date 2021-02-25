@@ -14,6 +14,13 @@ const getSignUp = (state = [], action) => {
     return state;
 };
 
+const getDetails = (state = [], action) => {
+   if (action.type === 'SET_DETAILS') {
+        return action.payload;
+    }
+    return state;
+};
+
 
 // make one object that has keys loginMessage, registrationMessage
 // these will be on the redux state at:
@@ -21,4 +28,5 @@ const getSignUp = (state = [], action) => {
 export default combineReducers({
     getEvents,
     getSignUp,
+    getDetails,
 });

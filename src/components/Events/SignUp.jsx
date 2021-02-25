@@ -4,14 +4,13 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import './Events.css';
 
-function EventsItem() {
+function SignUpForm() {
 
     const [discord, setDiscord] = useState('');
     const [inGame, setInGame] = useState('');
     const history = useHistory();
     const user = useSelector(store => store.user);
-    const event = useSelector(store => store.events);
-    const eventId = useSelector(store => store.current.CurrentSignUpReducer);
+    const eventId = useSelector(store => store.current.CurrentEventReducer);
     const currentEvent = useSelector(store => store.events.getSignUp);
     const dispatch = useDispatch();
 
@@ -24,7 +23,7 @@ function EventsItem() {
                 discord: discord,
                 inGame: inGame,
                 event: eventId,
-                author: user.id,
+                user: user.id,
             },
         });
         alert('Successfully signed up!');
@@ -57,8 +56,9 @@ function EventsItem() {
                 <button type='submit'>Sign Up</button>
 
             </form>
+            <button onClick={() => { history.goBack() }}>Go Back</button>
         </div>
     );
 }
 
-export default EventsItem;
+export default SignUpForm;

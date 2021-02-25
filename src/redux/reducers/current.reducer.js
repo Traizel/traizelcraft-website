@@ -14,8 +14,8 @@ const CurrentThreadReducer = (state = 0, action) => {
     return state;
 };
 
-const CurrentSignUpReducer = (state = 0, action) => {
-   if (action.type === 'SET_CURRENT_SIGN_UP') {
+const CurrentEventReducer = (state = 0, action) => {
+   if (action.type === 'SET_CURRENT_EVENT') {
         return action.payload;
     }
     return state;
@@ -27,5 +27,5 @@ const CurrentSignUpReducer = (state = 0, action) => {
 export default combineReducers({
     CurrentCategoryReducer,
     CurrentThreadReducer,
-    CurrentSignUpReducer,
+    CurrentEventReducer,
 });

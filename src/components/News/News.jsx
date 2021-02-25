@@ -17,6 +17,12 @@ function News() {
         dispatch({ type: 'GET_NEWS' });
     }, [])
 
+    let newArticleButton;
+    if (user.access_level >= 3) {
+        newArticleButton = <button onClick={() => { history.push('./add-article') }}>New Article</button>;
+    } else {
+        newArticleButton = <></>
+    }
 
     return (
         <div className='news-section'>
@@ -28,7 +34,7 @@ function News() {
                 <p>The news page is a list of all up to date info on TraizelCraft Network! 
                     Come here for updates, patch notes, future plans, teasers, and more!</p>
             </div>
-            <button onClick={() => {history.push('./add-article')}}>New Article</button>
+            {newArticleButton}
             <div className='news-list'>
                 {news.getNews.map(article =>
                     (<NewsItem article={article} key={article.id} />)

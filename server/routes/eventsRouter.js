@@ -18,6 +18,36 @@ router.post('/', (req, res) => {
     });
 });
 
+router.delete('/:id', (req, res) => {
+  const id = req.params.id;
+  console.log('Delete event with id:', id);
+
+  const queryText = `DELETE FROM "event"
+    WHERE id = $1`;
+  pool
+    .query(queryText, [id])
+    .then(() => res.sendStatus(201))
+    .catch((err) => {
+      console.log('Event delete failed: ', err);
+      res.sendStatus(500);
+    });
+});
+
+router.delete('/signup/:id', (req, res) => {
+  const id = req.params.id;
+  console.log('Delete signups with id:', id);
+
+  const queryText = `DELETE FROM "signups"
+    WHERE event_id = $1`;
+  pool
+    .query(queryText, [id])
+    .then(() => res.sendStatus(201))
+    .catch((err) => {
+      console.log('Signups delete failed: ', err);
+      res.sendStatus(500);
+    });
+});
+
 router.get('/', (req, res) => {
   // return all categories
   console.log('Getting Events..');
@@ -38,9 +68,9 @@ router.post('/getsignups', (req, res) => {
   const currentEvent = req.body.event;
   // return all categories
   console.log('Getting Sign Up Event..');
-  const query = `SELECT * FROM event WHERE id = ${currentEvent}`;
+  const query = `SELECT * FROM event WHERE id = $1`;
   pool
-    .query(query)
+    .query(query, [currentEvent])
     .then((result) => {
       console.log(result.rows);
       res.send(result.rows);
@@ -55,13 +85,30 @@ router.post('/signup', (req, res) => {
   const signup = req.body.signup;
   console.log('New signup incoming:', signup);
 
-  const queryText = `INSERT INTO "signups" (discord_name, in_game_name, user_id, event_id)
+  const queryText = `INSERT INTO "signups" (discord_name, in_game_name, event_id, user_id)
     VALUES ($1, $2, $3, $4)`;
   pool
-    .query(queryText, [signup.discord, signup.inGame, signup.event, signup.author])
+    .query(queryText, [signup.discord, signup.inGame, signup.event, signup.user])
     .then(() => res.sendStatus(201))
     .catch((err) => {
       console.log('Signup creation failed: ', err);
+      res.sendStatus(500);
+    });
+});
+
+router.post('/getdetails', (req, res) => {
+  const currentEvent = req.body.event;
+  // return all categories
+  console.log('Getting Sign Up Event..');
+  const query = `SELECT * FROM signups WHERE event_id = $1`;
+  pool
+    .query(query, [currentEvent])
+    .then((result) => {
+      console.log(result.rows);
+      res.send(result.rows);
+    })
+    .catch((error) => {
+      console.log(`Error on query ${error}`);
       res.sendStatus(500);
     });
 });

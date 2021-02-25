@@ -14,6 +14,7 @@ import AddNews from '../News/AddNews';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import UserPage from '../UserPage/UserPage';
 import SignUp from '../Events/SignUp';
+import EventDetails from '../Events/EventDetails';
 import './App.css';
 import {
   HashRouter as Router,
@@ -84,7 +85,7 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
+            // logged in shows add event else shows LoginPage
             exact
             path="/add-event"
           >
@@ -92,7 +93,7 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
+            // logged in shows add article else shows LoginPage
             exact
             path="/add-article"
           >
@@ -141,6 +142,14 @@ function App() {
             path="/sign-up"
           >
             <SignUp />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows UserPage else shows LoginPage
+            exact
+            path="/event-details"
+          >
+            <EventDetails />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}

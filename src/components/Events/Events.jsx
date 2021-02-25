@@ -17,6 +17,13 @@ function Events() {
         dispatch({ type: 'GET_EVENTS' });
     }, [])
 
+    let newEventButton;
+    if (user.access_level >= 1) {
+        newEventButton = <button onClick={() => { history.push('/add-event') }}>New Event</button>;
+    } else {
+        newEventButton = <></>
+    }
+
 
     return (
         <div className='events-section'>
@@ -30,7 +37,7 @@ function Events() {
                     of each event before signing up. Some events recommend filling out your Discord and/or 
                     In-Game name that you use (Xbox, PS4, Steam, etc).</p>
             </div>
-            <button onClick={() => {history.push('/add-event')}}>New Event</button>
+            {newEventButton}
             <div className='events-list'>
                 {events.getEvents.map(event =>
                     (<EventsItem event={event} key={event.id} />)
