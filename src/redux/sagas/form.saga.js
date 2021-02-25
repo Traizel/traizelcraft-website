@@ -34,7 +34,8 @@ function* addThread(action) {
     try {
         console.log(action.payload);
         const threadResponse = yield axios.post('/api/threads/add', {thread: action.payload});
-        yield put({ type: 'SET_THREADS', payload: threadResponse.data.category_id});
+        yield axios.post('/api/comments/add', {comments: action.payload, threadId: threadResponse.data});
+        yield put({ type: 'SET_THREADS', payload: threadResponse.data});
     } catch (error) {
         console.log(`Error adding thread`, error);
     }

@@ -43,7 +43,6 @@ CREATE TABLE "news" (
 CREATE TABLE "forum_thread" (
 	"id" serial NOT NULL,
 	"title" TEXT NOT NULL,
-	"description" TEXT NOT NULL,
 	"views" integer NOT NULL,
 	"author_id" integer NOT NULL,
 	"timestamp" TIMESTAMP NOT NULL,

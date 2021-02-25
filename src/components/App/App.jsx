@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Forum from '../Forum/ForumCategories/ForumCategories';
 import Thread from '../Forum/Thread/Thread';
+import CreateThread from '../Forum/Thread/CreateThread';
 import Post from '../Forum/Post/Post';
 import Header from '../Header/Header';
 import Home from '../Home/Home';
@@ -22,7 +23,6 @@ import './App.css';
 import {
   HashRouter as Router,
   Route,
-  Redirect,
   Switch,
 } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -73,6 +73,30 @@ function App() {
             path="/forum"
           >
             <Forum />
+          </Route>
+
+          <Route
+            // shows News at all times (logged in or not)
+            exact
+            path="/thread"
+          >
+            <Thread />
+          </Route>
+          
+          <Route
+            // shows News at all times (logged in or not)
+            exact
+            path="/create-thread"
+          >
+            <CreateThread />
+          </Route>
+
+          <Route
+            // shows News at all times (logged in or not)
+            exact
+            path="/post"
+          >
+            <Post />
           </Route>
 
           {/* For protected routes, the view could show one of several things on the same route.
@@ -160,8 +184,6 @@ function App() {
             <h1>404</h1>
           </Route>
         </Switch>
-          {/* <Route path="/thread" component={Thread} />
-          <Route path="/post" component={Post} /> */}
       <Footer />
       </div>
       </Router>

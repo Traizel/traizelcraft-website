@@ -20,7 +20,7 @@ function CreateThread() {
             type: 'ADD_THREAD',
             payload: {
                 subject: subject,
-                description: description,
+                text: description,
                 category: currentCategory,
                 author: user.id,
             },

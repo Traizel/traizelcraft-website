@@ -27,10 +27,10 @@ router.post('/add', (req, res) => {
   const thread = req.body.thread;
   console.log(thread);
   console.log('Adding Thread..');
-  const query = `INSERT INTO "forum_thread" (title, description, views, author_id, timestamp, category_id)
-    VALUES ($1, $2, 0, $3, NOW(), $4)`;
+  const query = `INSERT INTO "forum_thread" (title, views, author_id, timestamp, category_id)
+    VALUES ($1, 0, $2, NOW(), $3)`;
   pool
-    .query(query, [thread.subject, thread.description, thread.author, thread.category])
+    .query(query, [thread.subject, thread.author, thread.category])
     .then((result) => {
       console.log(result.rows);
       res.send(result.rows);
