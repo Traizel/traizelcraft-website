@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import './News.css';
 import { useDispatch } from 'react-redux';
+import NewsItem from './NewsItem';
 
 function News() {
 
@@ -29,7 +30,9 @@ function News() {
             </div>
             <button onClick={() => {history.push('./add-article')}}>New Article</button>
             <div className='news-list'>
-
+                {news.getNews.map(article =>
+                    (<NewsItem article={article} key={article.id} />)
+                )}
             </div>
         </div>
     );

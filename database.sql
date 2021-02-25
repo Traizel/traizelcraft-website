@@ -82,6 +82,8 @@ CREATE TABLE "forum_comments" (
 
 CREATE TABLE "signups" (
 	"id" serial NOT NULL,
+	"discord_name" TEXT NOT NULL,
+	"in_game_name" TEXT NOT NULL,
 	"user_id" integer NOT NULL,
 	"event_id" integer NOT NULL,
 	CONSTRAINT "signups_pk" PRIMARY KEY ("id")

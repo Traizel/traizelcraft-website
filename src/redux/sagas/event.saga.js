@@ -20,9 +20,30 @@ function* fetchEvents() {
     }
 }
 
+function* getSignUp(action) {
+    try {
+        console.log(action.payload);
+        const signUpResponse = yield axios.post('/api/events/getsignups', {event: action.payload});
+        yield put({ type: 'SET_SIGN_UP', payload: signUpResponse.data});
+    } catch (error) {
+        console.log(`Error adding event`, error);
+    }
+}
+
+function* signUp(action) {
+    try {
+        console.log(action.payload);
+        yield axios.post('/api/events/signup', {signup: action.payload});
+    } catch (error) {
+        console.log(`Error adding event`, error);
+    }
+}
+
 function* eventSaga() {
     yield takeEvery('ADD_EVENT', addEvent);
     yield takeEvery('GET_EVENTS', fetchEvents);
+    yield takeEvery('GET_SIGN_UP', getSignUp);
+    yield takeEvery('SIGN_UP', signUp);
 }
 
 export default eventSaga;

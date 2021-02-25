@@ -13,6 +13,7 @@ import AddEvent from '../Events/AddEvent';
 import AddNews from '../News/AddNews';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import UserPage from '../UserPage/UserPage';
+import SignUp from '../Events/SignUp';
 import './App.css';
 import {
   HashRouter as Router,
@@ -44,13 +45,13 @@ function App() {
             <Home />
           </Route>
           {/* Visiting localhost:3000/ will show the home page. */}
-          <Route
-            // shows Events at all times (logged in or not)
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
             exact
             path="/events"
           >
             <Events />
-          </Route>
+          </ProtectedRoute>
 
           {/* Visiting localhost:3000/news will show the news page. */}
           <Route
@@ -132,6 +133,14 @@ function App() {
             authRedirect="/"
           >
             <Home />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows UserPage else shows LoginPage
+            exact
+            path="/sign-up"
+          >
+            <SignUp />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}

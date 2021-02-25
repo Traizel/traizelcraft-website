@@ -46,11 +46,11 @@ function Nav() {
             Wiki
             </Link>
         </>
-        {user.id && (
+        <>
           <Link className="navLink" to="/forum">
             Forums
           </Link>
-        )}
+        </>
         <Link className="navLink" to={loginLinkData.path}>
           {loginLinkData.text}
         </Link>
