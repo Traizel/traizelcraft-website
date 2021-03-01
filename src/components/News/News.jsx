@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import './News.css';
 import { useDispatch } from 'react-redux';
 import NewsItem from './NewsItem';
+import { Container } from 'react-bootstrap';
 
 function News() {
 
@@ -35,11 +36,11 @@ function News() {
                     Come here for updates, patch notes, future plans, teasers, and more!</p>
             </div>
             {newArticleButton}
-            <div className='news-list'>
+            <Container>
                 {news.getNews.map(article =>
                     (<NewsItem article={article} key={article.id} />)
                 )}
-            </div>
+            </Container>
         </div>
     );
 }

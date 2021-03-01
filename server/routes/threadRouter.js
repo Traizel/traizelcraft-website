@@ -22,6 +22,26 @@ router.post('/', (req, res) => {
     });
 });
 
+router.post('/recent', (req, res) => {
+  // return all threads
+  const category = req.body.id;
+  console.log(category);
+  console.log('Getting recent Thread..');
+  const query = `SELECT * FROM "forum_thread"
+                    WHERE category_id = $1
+                    ORDER BY id DESC LIMIT 0, 1`;
+  pool
+    .query(query, [category])
+    .then((result) => {
+      console.log(result.rows);
+      res.send(result.rows);
+    })
+    .catch((error) => {
+      console.log(`Error on query ${error}`);
+      res.sendStatus(500);
+    });
+});
+
 router.post('/add', (req, res) => {
   // add new thread
   const thread = req.body.thread;

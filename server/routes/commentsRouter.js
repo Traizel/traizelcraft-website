@@ -25,14 +25,12 @@ router.post('/', (req, res) => {
 router.post('/add', (req, res) => {
   // add new thread
   const comment = req.body.comments;
-  const threadId = req.body.threadId;
   console.log(comment);
-  console.log(threadId);
   console.log('Adding Comment..');
   const query = `INSERT INTO "forum_comments" (text, author_id, timestamp, thread_id)
     VALUES ($1, $2, NOW(), $3)`;
   pool
-    .query(query, [comment.text, comment.author, threadId])
+    .query(query, [comment.comments.text, comment.comments.author, comment.threadId])
     .then((result) => {
       console.log(result.rows);
       res.send(result.rows);

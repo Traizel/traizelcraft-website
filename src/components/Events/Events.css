@@ -4,7 +4,6 @@
 }
 
 .events-section {
-    text-align: center;
     font-size: 200%;
 }
 
@@ -13,3 +12,16 @@ p {
     font-size: 24px;
 }
 
+.row {
+    display: flex;
+    justify-content: center;
+    background-color: #970f0fce;
+    border-radius: 20px;
+    margin: 10px 3%;
+    padding: 5px;
+}
+
+.row img {
+    width: 130px;
+    height: 130px;
+}

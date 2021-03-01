@@ -14,7 +14,7 @@ function Header() {
     return (
         <header>
             <div className='header-description'>
-                <img src='/images/JungleTree1.JPG'/>
+                <img className='logo' src='/images/JungleTree1.JPG' onClick={() => { history.push('/') }} />
                 <br />
                 <h4>Explore | Discover | Conquer | Become Legend</h4>
                 <br />

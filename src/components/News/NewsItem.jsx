@@ -1,6 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './News.css';
+import { Row, Col } from 'react-bootstrap';
 
 function NewsItem({ article }) {
 
@@ -9,11 +10,11 @@ function NewsItem({ article }) {
 
 
     return (
-        <div>
-            <img src={article.img_url}/>
-            <h3>{article.title}</h3>
-            <p>{article.description}</p>
-        </div>
+        <Row>
+            <Col sm><img src={article.img_url}/></Col>
+            <Col sm><h3>{article.title}</h3></Col>
+            <Col sm><p>{article.description}</p></Col>
+        </Row>
     );
 }
 

@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import './Events.css';
 import { useDispatch } from 'react-redux';
 import EventsItem from './EventItem';
+import { Container } from 'react-bootstrap';
 
 function Events() {
 
@@ -38,11 +39,11 @@ function Events() {
                     In-Game name that you use (Xbox, PS4, Steam, etc).</p>
             </div>
             {newEventButton}
-            <div className='events-list'>
+                <Container>
                 {events.getEvents.map(event =>
                     (<EventsItem event={event} key={event.id} />)
                 )}
-            </div>
+                </Container>
         </div>
     );
 }

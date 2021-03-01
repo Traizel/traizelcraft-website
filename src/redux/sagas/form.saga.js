@@ -32,9 +32,15 @@ function* fetchComments(action) {
 
 function* addThread(action) {
     try {
+        let comment = {};
         console.log(action.payload);
-        const threadResponse = yield axios.post('/api/threads/add', {thread: action.payload});
-        yield axios.post('/api/comments/add', {comments: action.payload, threadId: threadResponse.data});
+        yield axios.post('/api/threads/add', {thread: action.payload});
+        let threadResponse = yield axios.post('/api/threads/recent', {category: action.payload.category});
+        yield comment = {
+            threadId: threadResponse.data,
+            comments: action.payload, 
+        };
+        yield axios.post('/api/comments/add', {comments: comment});
         yield put({ type: 'SET_THREADS', payload: threadResponse.data});
     } catch (error) {
         console.log(`Error adding thread`, error);

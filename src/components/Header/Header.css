@@ -20,6 +20,10 @@ img {
     margin: 5px;
 }
 
+.logo:hover {
+    cursor: pointer;
+}
+
 .header-buttons {
     background-color: rgb(187, 9, 9, 0.795);
     border-radius: 20px;

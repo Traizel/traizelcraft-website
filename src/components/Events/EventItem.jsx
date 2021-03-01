@@ -1,13 +1,17 @@
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
+import { Row, Col } from 'react-bootstrap';
 import './Events.css';
+import moment from 'moment';
 
 function EventsItem({event}) {
 
     const history = useHistory();
     const user = useSelector(store => store.user);
     const dispatch = useDispatch();
+    let startTime = moment().format(event.start_time);
+    let startDay = moment().format(event.start_date);
 
     const signUp = () => {
         dispatch({ type: 'SET_CURRENT_EVENT', payload: event.id });
@@ -46,12 +50,12 @@ function EventsItem({event}) {
 
 
     return (
-        <div>
-            <h3>{event.title}</h3>
-            <p>{event.description}</p>
-            <h6>Starts: {event.start_date} at {event.start_time}</h6>
-            {buttons}
-        </div>
+        <Row>
+            <Col sm><h3>{event.title}</h3></Col>
+            <Col sm><p>{event.description}</p></Col>
+            <Col sm><h6>Starts: {startDay} at {startTime}</h6></Col>
+            <Col sm>{buttons}</Col>
+        </Row>
     );
 }
 
