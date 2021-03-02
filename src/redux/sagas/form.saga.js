@@ -34,8 +34,7 @@ function* addThread(action) {
     try {
         let comment = {};
         console.log(action.payload);
-        yield axios.post('/api/threads/add', {thread: action.payload});
-        let threadResponse = yield axios.post('/api/threads/recent', {category: action.payload.category});
+        let threadResponse = yield axios.post('/api/threads/add', {thread: action.payload});
         yield comment = {
             threadId: threadResponse.data,
             comments: action.payload, 
@@ -47,11 +46,22 @@ function* addThread(action) {
     }
 }
 
+function* addComment(action) {
+    try {
+        console.log(action.payload);
+        yield axios.post('/api/comments/new', {comment: action.payload});
+        yield put({ type: 'FETCH_COMMENTS', payload: action.payload.thread});
+    } catch (error) {
+        console.log(`Error adding thread`, error);
+    }
+}
+
 function* loginSaga() {
     yield takeEvery('FETCH_CATEGORIES', fetchForumCategories);
     yield takeEvery('FETCH_THREADS', fetchThreads);
     yield takeEvery('FETCH_COMMENTS', fetchComments);
     yield takeEvery('ADD_THREAD', addThread);
+    yield takeEvery('ADD_COMMENT', addComment);
 }
 
 export default loginSaga;

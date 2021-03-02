@@ -13,7 +13,8 @@ function Thread() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch({ type: 'FETCH_THREADS', payload: currentCategory });
+        dispatch({ type: 'GET_CURRENT_CATEGORY'});
+        setTimeout(function () {dispatch({ type: 'FETCH_THREADS', payload: currentCategory })}, 1000);
     }, [])
 
     const createThread = () => {

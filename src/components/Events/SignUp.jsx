@@ -31,6 +31,7 @@ function SignUpForm() {
     }
 
     useEffect(() => {
+        dispatch({ type: 'GET_CURRENT_EVENT' });
         dispatch({ type: 'GET_SIGN_UP', payload: eventId });
     }, [])
 

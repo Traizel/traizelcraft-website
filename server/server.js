@@ -3,10 +3,21 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const sessionMiddleware = require('./modules/session-middleware');
 const passport = require('./strategies/user.strategy');
+const cookieSession = require('cookie-session');
 
 const app = express();
 // App PORT set with production check
 const PORT = process.env.PORT || 5000;
+
+// Session setup
+// Makes req.session a thing
+app.use(cookieSession({
+  name: 'session',
+  keys: ['session'],
+ 
+  // Cookie Options
+  maxAge: 2 * 60 * 1000 // 2 minutes
+}));
 
 // Route includes
 const forumRouter = require('./routes/forumRouter');
@@ -15,6 +26,7 @@ const threadRouter = require('./routes/threadRouter');
 const commentsRouter = require('./routes/commentsRouter');
 const eventsRouter = require('./routes/eventsRouter');
 const newsRouter = require('./routes/newsRouter');
+const currentRouter = require('./routes/currentRouter');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -37,6 +49,7 @@ app.use('/api/threads', threadRouter);
 app.use('/api/comments', commentsRouter);
 app.use('/api/events', eventsRouter);
 app.use('/api/news', newsRouter);
+app.use('/api/current', currentRouter);
 
 // Listen
 app.listen(PORT, () => {

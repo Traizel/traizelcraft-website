@@ -12,7 +12,7 @@ function ForumCategoriesItem({ category }) {
     }, [])
 
     const toThread = () => {
-        dispatch({ type: 'SET_CURRENT_CATEGORY', payload: category.id })
+        dispatch({ type: 'ADD_CURRENT_CATEGORY', payload: category.id })
         history.push('./thread')
     }
 

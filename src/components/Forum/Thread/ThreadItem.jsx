@@ -12,7 +12,7 @@ function ForumThreadsItem({ thread }) {
     }, [])
 
     const toPost = () => {
-        dispatch({ type: 'SET_CURRENT_THREAD', payload: thread.id })
+        dispatch({ type: 'ADD_CURRENT_THREAD', payload: thread.id })
         history.push('./post')
     }
 

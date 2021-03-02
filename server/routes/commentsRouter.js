@@ -30,7 +30,26 @@ router.post('/add', (req, res) => {
   const query = `INSERT INTO "forum_comments" (text, author_id, timestamp, thread_id)
     VALUES ($1, $2, NOW(), $3)`;
   pool
-    .query(query, [comment.comments.text, comment.comments.author, comment.threadId])
+    .query(query, [comment.comments.text, comment.comments.author, comment.threadId[0].id])
+    .then((result) => {
+      console.log(result.rows);
+      res.send(result.rows);
+    })
+    .catch((error) => {
+      console.log(`Error on query ${error}`);
+      res.sendStatus(500);
+    });
+});
+
+router.post('/new', (req, res) => {
+  // add new thread
+  const comment = req.body.comment;
+  console.log(comment);
+  console.log('Adding Comment..');
+  const query = `INSERT INTO "forum_comments" (text, author_id, timestamp, thread_id)
+    VALUES ($1, $2, NOW(), $3)`;
+  pool
+    .query(query, [comment.text, comment.author, comment.thread])
     .then((result) => {
       console.log(result.rows);
       res.send(result.rows);

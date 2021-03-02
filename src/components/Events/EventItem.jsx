@@ -14,7 +14,7 @@ function EventsItem({event}) {
     let startDay = moment().format(event.start_date);
 
     const signUp = () => {
-        dispatch({ type: 'SET_CURRENT_EVENT', payload: event.id });
+        dispatch({ type: 'ADD_CURRENT_EVENT', payload: event.id });
         history.push('/sign-up')
     }
 
@@ -25,7 +25,7 @@ function EventsItem({event}) {
     }
 
     const viewDetails = () => {
-        dispatch({ type: 'SET_CURRENT_EVENT', payload: event.id });
+        dispatch({ type: 'ADD_CURRENT_EVENT', payload: event.id });
         history.push('/event-details')
     }
 

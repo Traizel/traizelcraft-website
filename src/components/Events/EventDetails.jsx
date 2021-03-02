@@ -13,6 +13,7 @@ function EventDetails() {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        dispatch({ type: 'GET_CURRENT_EVENT'});
         dispatch({ type: 'GET_DETAILS', payload: eventId });
     }, [])
 

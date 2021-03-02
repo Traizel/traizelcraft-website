@@ -65,7 +65,10 @@ function AddNews() {
                 onChange={(event) => setTitle(event.target.value)}
                 required/></h4>
 
-                <h4>Article Description:<input 
+                <h4>Article Description:<textarea
+                cols="100"
+                rows="20" 
+                className='add-article-description'
                 placeholder='Description' 
                 type='text' 
                 value={description}
