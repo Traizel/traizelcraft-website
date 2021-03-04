@@ -1,4 +1,6 @@
 import React from 'react';
+import '../App/Bootstrap.css';
+import './RegisterPage.css';
 
 import { useHistory } from 'react-router-dom';
 import RegisterForm from '../RegisterForm/RegisterForm';
@@ -22,7 +24,7 @@ function RegisterPage() {
           Login
         </button>
       </center>
-      <button onClick={() => { history.goBack() }}>Go Back</button>
+      <button onClick={() => { history.goBack() }} className='go-back' className="btn btn-primary" >Go Back</button>
     </div>
   );
 }

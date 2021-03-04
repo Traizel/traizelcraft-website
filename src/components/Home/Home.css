@@ -18,11 +18,9 @@
 }
 
 .about-section {
-    background-color: rgb(245, 237, 237);
     padding: 10px 50px 10px 50px;
-    border-radius: 10px;
     text-align: center;
-    margin: 10px 20%;
+    margin: 10px 10%;
 }
 
 .about-section p {
@@ -47,8 +45,6 @@
 }
 
 .social-media-links-container {
-    background-color: rgb(245, 237, 237);
-    border-radius: 10px;
     padding: 10px;
     margin: 10px 5%;
     text-align: center;
@@ -65,8 +61,6 @@
 }
 
 .videos-container {
-    background-color: rgb(245, 237, 237);
-    border-radius: 10px;
     padding: 10px;
     margin: 10px 2%;
     text-align: center;

@@ -1,6 +1,8 @@
 import React from 'react';
 import LoginForm from '../LoginForm/LoginForm';
 import { useHistory } from 'react-router-dom';
+import './LoginPage.css';
+import '../App/Bootstrap.css';
 
 function LoginPage() {
   const history = useHistory();
@@ -21,7 +23,7 @@ function LoginPage() {
           Register
         </button>
       </center>
-      <button onClick={() => { history.goBack() }}>Go Back</button>
+      <button onClick={() => { history.goBack() }} className="btn btn-primary">Go Back</button>
     </div>
   );
 }

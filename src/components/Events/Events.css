@@ -15,9 +15,9 @@ p {
 .row {
     display: flex;
     justify-content: center;
-    background-color: #970f0fce;
+    background-color: #363232ce;
     border-radius: 20px;
-    margin: 10px 3%;
+    margin: 30px 3%;
     padding: 5px;
 }
 

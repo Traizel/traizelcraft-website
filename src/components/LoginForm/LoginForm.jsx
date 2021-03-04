@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
+import './LoginForm.css';
+import '../App/Bootstrap.css';
 
 function LoginForm() {
     const [username, setUsername] = useState('');
@@ -34,10 +36,11 @@ function LoginForm() {
                     {errors.loginMessage}
                 </h3>
             )}
-            <div>
+            <div className="form-group">
                 <label htmlFor="username">
                     Username:
           <input
+                        className="form-control"
                         type="text"
                         name="username"
                         required
@@ -46,10 +49,11 @@ function LoginForm() {
                     />
                 </label>
             </div>
-            <div>
+            <div className="form-group">
                 <label htmlFor="password">
                     Password:
-          <input
+          <input    
+                        className="form-control"
                         type="password"
                         name="password"
                         required
@@ -58,7 +62,7 @@ function LoginForm() {
                     />
                 </label>
             </div>
-            <div>
+            <div className="form-group">
                 <input className="btn" type="submit" name="submit" value="Log In" />
             </div>
         </form>

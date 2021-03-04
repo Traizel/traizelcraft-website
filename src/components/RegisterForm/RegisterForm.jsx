@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
+import '../App/Bootstrap.css';
 
 function RegisterForm() {
     const [username, setUsername] = useState('');
@@ -29,10 +30,11 @@ function RegisterForm() {
                     {errors.registrationMessage}
                 </h3>
             )}
-            <div>
+            <div className="form-group">
                 <label htmlFor="username">
                     Username:
           <input
+                        className="form-control"
                         type="text"
                         name="username"
                         value={username}
@@ -41,10 +43,11 @@ function RegisterForm() {
                     />
                 </label>
             </div>
-            <div>
+            <div className="form-group">
                 <label htmlFor="password">
                     Password:
           <input
+                        className="form-control"
                         type="password"
                         name="password"
                         value={password}
@@ -53,7 +56,7 @@ function RegisterForm() {
                     />
                 </label>
             </div>
-            <div>
+            <div className="form-group">
                 <input className="btn" type="submit" name="submit" value="Register" />
             </div>
         </form>
