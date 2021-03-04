@@ -9,7 +9,8 @@ router.post('/', (req, res) => {
   console.log(comments);
   console.log('Getting Comments..');
   const query = `SELECT * FROM "forum_comments"
-                    WHERE thread_id = $1`;
+                    WHERE thread_id = $1
+                    ORDER BY timestamp DESC`;
   pool
     .query(query, [comments])
     .then((result) => {

@@ -2,19 +2,18 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import ThreadItem from './ThreadItem';
 import { useHistory } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
+import Header from '../ForumHeader/ForumHeader';
 
 function Thread() {
 
-    const currentCategory = useSelector(store => store.current.CurrentCategoryReducer);
     const threads = useSelector(store => store.form.ForumThreadsReducer);
-    const history = useHistory()
-    console.log(currentCategory);
+    const history = useHistory();
     console.log(threads);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch({ type: 'GET_CURRENT_CATEGORY'});
-        setTimeout(function () {dispatch({ type: 'FETCH_THREADS', payload: currentCategory })}, 1000);
     }, [])
 
     const createThread = () => {
@@ -22,14 +21,15 @@ function Thread() {
     }
 
     return (
-        <div >
-            <h1>TraizelCraft Forums</h1>
-            <button onClick={createThread}>Create Thread</button>
-            <div>
+        <div className='forum-main'>
+            <Header />
+            <button onClick={() => { history.goBack() }} className="btn btn-outline-warning go-back">Go Back</button>
+            <button onClick={createThread} class="btn btn-outline-info">Create Thread</button>
+            <Container>
                 {threads.map(thread =>
                     (<ThreadItem thread={thread} key={thread.id} />)
                 )}
-            </div>
+            </Container>
         </div>
     );
 }

@@ -1,11 +1,15 @@
+import { Row, Col } from 'react-bootstrap';
+import moment from 'moment';
 
 function CommentsItem({ comment }) {
 
     return (
-        <div>
-            <p>{comment.text}</p>
-            <p>Created: {comment.timestamp}</p>
-        </div>
+        <Row>
+            <Col sm={10}>{comment.text}</Col>
+            <Col sm={2}>Posted:
+            <br />
+            {moment(comment.timestamp).fromNow()}</Col>
+        </Row>
     );
 }
 

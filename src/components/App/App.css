@@ -5,3 +5,15 @@
 .forum-main {
     text-align: center;
 }
+
+.forum-main h1 {
+    margin-bottom: 50px;
+}
+
+.long-input {
+    width: 50%;
+}
+
+.forum-item:hover {
+    cursor: pointer;
+}

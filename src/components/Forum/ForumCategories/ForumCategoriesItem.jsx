@@ -1,6 +1,7 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
+import { Row, Col } from 'react-bootstrap';
 
 function ForumCategoriesItem({ category }) {
 
@@ -12,15 +13,16 @@ function ForumCategoriesItem({ category }) {
     }, [])
 
     const toThread = () => {
-        dispatch({ type: 'ADD_CURRENT_CATEGORY', payload: category.id })
-        history.push('./thread')
+        dispatch({ type: 'FETCH_THREADS', payload: category.id});
+        dispatch({ type: 'ADD_CURRENT_CATEGORY', payload: category.id });
+        setTimeout(function () { history.push('./thread') }, 300 );
     }
 
     return (
-        <div onClick={toThread}>
-            <h2>{category.title}</h2>
-            <p>{category.description}</p>
-        </div>
+        <Row onClick={toThread} className='forum-item'>
+            <Col sm={4}><h2>{category.title}</h2></Col>
+            <Col sm={8}><p>{category.description}</p></Col>
+        </Row>
     );
 }
 

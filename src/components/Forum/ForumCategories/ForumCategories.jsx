@@ -1,6 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import ForumCategoriesItem from './ForumCategoriesItem';
+import { Container } from 'react-bootstrap';
+import Header from '../ForumHeader/ForumHeader';
 
 function ForumCategories() {
 
@@ -14,12 +16,12 @@ function ForumCategories() {
 
     return (
         <div className='forum-main'>
-            <h1>TraizelCraft Forums</h1>
-            <div>
+            <Header />
+            <Container>
                 {categories.map(category =>
                 ( <ForumCategoriesItem category={category} key={category.id}/> )
                 )}
-            </div>
+            </Container>
         </div>
     );
 }

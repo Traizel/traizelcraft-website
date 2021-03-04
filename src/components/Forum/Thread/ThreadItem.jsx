@@ -1,6 +1,8 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
+import { Row, Col } from 'react-bootstrap';
+import moment from 'moment';
 
 function ForumThreadsItem({ thread }) {
 
@@ -12,16 +14,18 @@ function ForumThreadsItem({ thread }) {
     }, [])
 
     const toPost = () => {
+        dispatch({ type: 'FETCH_COMMENTS', payload: thread.id });
         dispatch({ type: 'ADD_CURRENT_THREAD', payload: thread.id })
-        history.push('./post')
+        setTimeout(function () { history.push('./post') }, 300);
     }
 
     return (
-        <div onClick={toPost}>
-            <h2>{thread.title}</h2>
-            <p>{thread.description}</p>
-            <p>Created: {thread.timestamp}</p>
-        </div>
+        <Row onClick={toPost} className='forum-item'>
+            <Col sm={9}><h2>{thread.title}</h2></Col>
+            <Col sm={3}><p>Posted:
+                <br />
+                {moment(thread.timestamp).fromNow()}</p></Col>
+        </Row>
     );
 }
 

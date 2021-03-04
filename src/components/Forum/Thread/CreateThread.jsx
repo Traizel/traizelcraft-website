@@ -31,27 +31,35 @@ function CreateThread() {
 
 
     return (
-        <div>
+        <div className='forum-main add-event'>
             <h1>Create Thread</h1>
             <form onSubmit={createThread}>
-                <h4>Thread Subject:<input
+                <h4>Thread Subject:</h4>
+                <input
+                    className="form-control"
                     placeholder='Subject'
                     type='text'
                     value={subject}
                     onChange={(event) => setSubject(event.target.value)}
-                    required /></h4>
+                    required />
 
-                <h4>Thread Description:<input
+                <h4>Thread Description:</h4>
+                <input
+                    className="form-control"
                     placeholder='Description'
                     type='text'
                     value={description}
                     onChange={(event) => setDescription(event.target.value)}
-                    required /></h4>
+                    required />
+                    <br />
+                    <br />
 
-                <button type='submit'>Add Thread</button>
+                <button type='submit' className="btn btn-outline-success">Add Thread</button>
 
             </form>
-            <button onClick={() => { history.goBack() }}>Go Back</button>
+            <br />
+            <button onClick={() => { history.goBack() }} className="btn btn-outline-warning go-back">Go Back</button>
+            <br />
         </div>
     );
 }
