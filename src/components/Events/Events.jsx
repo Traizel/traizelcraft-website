@@ -46,6 +46,7 @@ function Events() {
                     (<EventsItem event={event} key={event.id} />)
                 )}
                 </Container>
+            <div className='white-space'><h1>-</h1></div>
         </div>
     );
 }

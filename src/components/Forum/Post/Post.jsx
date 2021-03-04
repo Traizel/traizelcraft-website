@@ -18,6 +18,7 @@ function Post() {
             <Header />
             <button onClick={() => { history.goBack() }} className="btn btn-outline-warning go-back">Go Back</button>
             <Comments />
+            <div className='white-space'><h1>-</h1></div>
         </div>
     );
 }

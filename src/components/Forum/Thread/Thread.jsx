@@ -30,6 +30,7 @@ function Thread() {
                     (<ThreadItem thread={thread} key={thread.id} />)
                 )}
             </Container>
+            <div className='white-space'><h1>-</h1></div>
         </div>
     );
 }

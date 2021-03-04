@@ -52,7 +52,7 @@ function AddNews() {
 
 
     return (
-        <div className='add-article'>
+        <div className='add-article add-article-description'>
             <h1>Add Article</h1>
             <div className='news-page-image'>
                 <img src="./images/TraizelStatue1.JPG" />
@@ -61,6 +61,7 @@ function AddNews() {
                 <div className='form-group'>
                 <h4>Article Title:</h4>
                 <input 
+                className='long-input'
                 placeholder='Title' 
                 type='text' 
                 value={title}
@@ -73,7 +74,7 @@ function AddNews() {
                 <h4>Article Description:</h4>
                 <br />
                 <textarea
-                rows="20" 
+                rows="10" 
                 className='form-control'
                 placeholder='Description' 
                 type='text' 

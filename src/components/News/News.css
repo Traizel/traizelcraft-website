@@ -34,3 +34,8 @@ p {
 .add-article-description {
     margin: 10px 20%;
 }
+
+.white-space {
+    margin-bottom: 50px;
+    text-align: center;
+}

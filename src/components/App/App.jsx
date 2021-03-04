@@ -21,6 +21,7 @@ import SignUp from '../Events/SignUp';
 import EventDetails from '../Events/EventDetails';
 import PrivacyPolicy from '../PrivacyPolicy/PrivacyPolicy';
 import FAQ from '../FAQ/FAQ';
+import Downloads from '../Downloads/Downloads';
 import './App.css';
 import {
   HashRouter as Router,
@@ -116,6 +117,14 @@ function App() {
           >
             <FAQ />
           </Route>
+
+          <ProtectedRoute
+            // logged in shows UserPage else shows LoginPage
+            exact
+            path="/downloads"
+          >
+            <Downloads />
+          </ProtectedRoute>
 
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
