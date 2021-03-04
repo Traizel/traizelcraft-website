@@ -3,23 +3,30 @@
     border-radius: 10px;
 }
 
-.news-section {
-    text-align: center;
-    font-size: 200%;
-}
-
 p {
     margin: 10px 15%;
     font-size: 24px;
 }
 
 .row img {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     border-radius: 10px;
 }
 
 .row {
     justify-content: center;
     display: flex;
+}
+
+.small-text {
+    font-size: 15px;
+}
+
+.header{ 
+    text-align: center;
+}
+
+.add-article {
+    text-align: center;
 }

@@ -25,3 +25,7 @@ p {
     width: 130px;
     height: 130px;
 }
+
+.add-event {
+    text-align: center;
+}

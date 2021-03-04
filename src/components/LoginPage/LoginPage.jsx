@@ -23,7 +23,7 @@ function LoginPage() {
           Register
         </button>
       </center>
-      <button onClick={() => { history.goBack() }} className="btn btn-primary">Go Back</button>
+      <button onClick={() => { history.goBack() }} className="btn btn-primary go-back">Go Back</button>
     </div>
   );
 }

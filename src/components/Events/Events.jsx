@@ -20,7 +20,7 @@ function Events() {
 
     let newEventButton;
     if (user.access_level >= 1) {
-        newEventButton = <button onClick={() => { history.push('/add-event') }}>New Event</button>;
+        newEventButton = <button className='btn btn-primary' onClick={() => { history.push('/add-event') }}>New Event</button>;
     } else {
         newEventButton = <></>
     }
@@ -28,6 +28,7 @@ function Events() {
 
     return (
         <div className='events-section'>
+            <div className='header'>
             <h1>Events</h1>
             <div className='events-page-image'>
                 <img src="./images/Oasis1.JPG" />
@@ -39,6 +40,7 @@ function Events() {
                     In-Game name that you use (Xbox, PS4, Steam, etc).</p>
             </div>
             {newEventButton}
+            </div>
                 <Container>
                 {events.getEvents.map(event =>
                     (<EventsItem event={event} key={event.id} />)

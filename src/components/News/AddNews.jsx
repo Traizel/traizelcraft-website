@@ -52,7 +52,7 @@ function AddNews() {
 
 
     return (
-        <div className='news-section'>
+        <div className='add-article'>
             <h1>Add Article</h1>
             <div className='news-page-image'>
                 <img src="./images/TraizelStatue1.JPG" />
@@ -65,7 +65,9 @@ function AddNews() {
                 onChange={(event) => setTitle(event.target.value)}
                 required/></h4>
 
-                <h4>Article Description:<textarea
+                <h4>Article Description:
+                <br />
+                <textarea
                 cols="100"
                 rows="20" 
                 className='add-article-description'

@@ -11,9 +11,9 @@ function NewsItem({ article }) {
 
     return (
         <Row>
-            <Col sm><img src={article.img_url}/></Col>
-            <Col sm><h3>{article.title}</h3></Col>
-            <Col sm><p>{article.description}</p></Col>
+            <Col sm={2}><img src={article.img_url}/></Col>
+            <Col sm={2}><h3>{article.title}</h3></Col>
+            <Col sm={8} className='small-text'><p>{article.description}</p></Col>
         </Row>
     );
 }

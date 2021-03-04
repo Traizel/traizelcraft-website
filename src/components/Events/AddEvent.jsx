@@ -34,7 +34,7 @@ function AddEvent() {
 
 
     return (
-        <div className='events-section'>
+        <div className='add-event'>
             <h1>Add Event</h1>
             <div className='events-page-image'>
                 <img src="./images/Oasis1.JPG" />

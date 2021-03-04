@@ -20,13 +20,14 @@ function News() {
 
     let newArticleButton;
     if (user.access_level >= 3) {
-        newArticleButton = <button onClick={() => { history.push('./add-article') }}>New Article</button>;
+        newArticleButton = <button className='btn btn-primary' onClick={() => { history.push('./add-article') }}>New Article</button>;
     } else {
         newArticleButton = <></>
     }
 
     return (
         <div className='news-section'>
+            <div className='header'>
             <h1>News</h1>
             <div className='news-page-image'>
                 <img src="./images/TraizelStatue1.JPG" />
@@ -36,6 +37,7 @@ function News() {
                     Come here for updates, patch notes, future plans, teasers, and more!</p>
             </div>
             {newArticleButton}
+            </div>
             <Container>
                 {news.getNews.map(article =>
                     (<NewsItem article={article} key={article.id} />)

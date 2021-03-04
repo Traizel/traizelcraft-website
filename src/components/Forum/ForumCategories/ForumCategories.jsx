@@ -13,7 +13,7 @@ function ForumCategories() {
     }, [])
 
     return (
-        <div >
+        <div className='forum-main'>
             <h1>TraizelCraft Forums</h1>
             <div>
                 {categories.map(category =>
