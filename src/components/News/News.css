@@ -30,3 +30,7 @@ p {
 .add-article {
     text-align: center;
 }
+
+.add-article-description {
+    margin: 10px 20%;
+}

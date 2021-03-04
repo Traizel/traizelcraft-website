@@ -35,43 +35,61 @@ function AddEvent() {
 
     return (
         <div className='add-event'>
+        <div className='event-header'>
             <h1>Add Event</h1>
             <div className='events-page-image'>
                 <img src="./images/Oasis1.JPG" />
             </div>
+        </div>
             <form className='add-event-form' onSubmit={createEvent}>
-                <h4>Event Title:<input 
+                <div className="form-group">
+                <h4>Event Title: </h4>
+                <input 
+                className='form-control'
                 placeholder='Title' 
                 type='text'
                 value={title}
                 onChange={(event) => setTitle(event.target.value)}
-                required/></h4>
+                required/>
+                </div>
 
-                <h4>Event Description:<input 
+                <div className="form-group">
+                <h4>Event Description: </h4>
+                <input
+                className='form-control'
                 placeholder='Description' 
                 type='text'
                 value={description}
                 onChange={(event) => setDescription(event.target.value)}
-                required /></h4>
+                required />
+                </div>
 
-                <h4>Event Start Time:<input 
+                <div className="form-group">
+                <h4>Event Start Time: </h4> 
+                <input 
+                className='form-control'
                 placeholder='Time' 
                 type='time'
                 value={startTime}
                 onChange={(event) => setStartTime(event.target.value)}
-                required/></h4>
+                required/>
+                </div>
 
-                <h4>Event Start Day:<input 
+                <div className="form-group">
+                <h4>Event Start Day: </h4>
+                <input 
+                className='form-control'
                 placeholder='Date' 
                 type='date' 
                 value={startDay}
                 onChange={(event) => setStartDay(event.target.value)}
-                required/></h4>
+                required/>
+                </div>
 
-                <button type='submit'>Create Event</button>
+                <button type='submit' className="btn btn-outline-success">Create Event</button>
 
             </form>
-            <button onClick={() => {history.push('/events')}}>Go Back</button>
+            <button onClick={() => { history.push('/events') }} className="btn btn-outline-warning go-back">Go Back</button>
         </div>
     );
 }

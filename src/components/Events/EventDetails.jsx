@@ -7,19 +7,16 @@ import './Events.css';
 function EventDetails() {
 
     const history = useHistory();
-    const user = useSelector(store => store.user);
-    const eventId = useSelector(store => store.current.CurrentEventReducer);
     const details = useSelector(store => store.events.getDetails);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch({ type: 'GET_CURRENT_EVENT'});
-        dispatch({ type: 'GET_DETAILS', payload: eventId });
-    }, [])
+        dispatch({ type: 'GET_CURRENT_EVENT' });
+    }, []);
 
 
     return (
-        <div>
+        <div className='sign-up'>
             <h1>Signed up list:</h1>
             <ul>
                 {details.map(signup =>
@@ -28,7 +25,7 @@ function EventDetails() {
                     )
                 )}
             </ul>
-            <button onClick={() => {history.goBack()}}>Go Back</button>
+            <button onClick={() => { history.goBack() }} className="btn btn-outline-warning go-back">Go Back</button>
         </div>
     );
 }

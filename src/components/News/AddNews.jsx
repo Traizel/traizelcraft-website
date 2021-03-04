@@ -58,35 +58,43 @@ function AddNews() {
                 <img src="./images/TraizelStatue1.JPG" />
             </div>
             <form className='add-article-form' onSubmit={createNews}>
-                <h4>Article Title:<input 
+                <div className='form-group'>
+                <h4>Article Title:</h4>
+                <input 
                 placeholder='Title' 
                 type='text' 
                 value={title}
                 onChange={(event) => setTitle(event.target.value)}
-                required/></h4>
+                required/>
+                <br />
+                </div>
 
-                <h4>Article Description:
+                <div className="form-group">
+                <h4>Article Description:</h4>
                 <br />
                 <textarea
-                cols="100"
                 rows="20" 
-                className='add-article-description'
+                className='form-control'
                 placeholder='Description' 
                 type='text' 
                 value={description}
                 onChange={(event) => setDescription(event.target.value)}
-                required/></h4>
+                required/>
+                </div>
 
                 <ReactFilestack
+                    className="btn btn-outline-info"
                     apikey={api_key}
                     buttonText="Upload Image"
                     options={basicOptions}
                     onSuccess={onSuccess}
                     onError={onError}
                 />
-                <button type='submit'>Create Article</button>
+                <br />
+                <br />
+                <button type='submit' className="btn btn-outline-success">Create Article</button>
             </form>
-            <button onClick={() => { history.push('/news') }}>Go Back</button>
+            <button onClick={() => { history.push('/news') }} className="btn btn-outline-warning go-back">Go Back</button>
         </div>
     );
 }

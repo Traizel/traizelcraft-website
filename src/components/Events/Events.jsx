@@ -20,7 +20,7 @@ function Events() {
 
     let newEventButton;
     if (user.access_level >= 1) {
-        newEventButton = <button className='btn btn-primary' onClick={() => { history.push('/add-event') }}>New Event</button>;
+        newEventButton = <button className="btn btn-outline-secondary" onClick={() => { history.push('/add-event') }}>New Event</button>;
     } else {
         newEventButton = <></>
     }

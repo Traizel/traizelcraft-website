@@ -28,4 +28,14 @@ p {
 
 .add-event {
     text-align: center;
+    margin: 10px 10%;
+}
+
+.sign-up {
+    text-align: center;
+    margin: 10px 10%;
+}
+
+.expand-btn {
+    margin: 4px;
 }

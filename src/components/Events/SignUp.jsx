@@ -32,32 +32,36 @@ function SignUpForm() {
 
     useEffect(() => {
         dispatch({ type: 'GET_CURRENT_EVENT' });
-        dispatch({ type: 'GET_SIGN_UP', payload: eventId });
     }, [])
 
 
     return (
-        <div>
-            <h1>Signing Up for {currentEvent.title}</h1>
+        <div className='sign-up'>
+            <h1>Signing Up for {currentEvent[0].title}</h1>
             <form className='add-event-form' onSubmit={signUp}>
-                <h4>Discord Name:<input
+                <h4>Discord Name: </h4>
+                    <input
+                    className='form-control'
                     placeholder='Discord Name'
                     type='text'
                     value={discord}
                     onChange={(event) => setDiscord(event.target.value)}
-                    required /></h4>
+                    required />
 
-                <h4>In Game Username:<input
+                <h4>In Game Username: </h4>
+                    <input
+                    className='form-control'
                     placeholder='In Game Name'
                     type='text'
                     value={inGame}
                     onChange={(event) => setInGame(event.target.value)}
-                    required /></h4>
+                    required />
+                    <br />
 
-                <button type='submit'>Sign Up</button>
+                <button type='submit' className="btn btn-outline-success go-back">Sign Up</button>
 
             </form>
-            <button onClick={() => { history.goBack() }}>Go Back</button>
+            <button onClick={() => { history.goBack() }} className="btn btn-outline-warning go-back">Go Back</button>
         </div>
     );
 }

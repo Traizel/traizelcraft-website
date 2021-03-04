@@ -52,7 +52,8 @@ function EventsItem({event}) {
 
     const signUp = () => {
         dispatch({ type: 'ADD_CURRENT_EVENT', payload: event.id });
-        history.push('/sign-up')
+        dispatch({ type: 'GET_SIGN_UP', payload: event.id });
+        setTimeout(function () { history.push('/sign-up') }, 300);
     }
 
     const cancelEvent = () => {
@@ -63,35 +64,41 @@ function EventsItem({event}) {
     
     const viewDetails = () => {
         dispatch({ type: 'ADD_CURRENT_EVENT', payload: event.id });
-        history.push('/event-details')
+        dispatch({ type: 'GET_DETAILS', payload: event.id });
+        setTimeout(function () { history.push('/event-details') }, 300);
     }
 
     let buttons;
     if (user.access_level >= 3) {       
         buttons =   <>
-                        <button onClick={signUp}>Sign Up</button>
-                        <button onClick={cancelEvent}>Cancel Event</button>
-                        <button onClick={viewDetails}>View Details</button>
+            <button onClick={signUp} className="btn btn-primary btn-sm expand-btn">Sign Up</button>
+            <button onClick={cancelEvent} className="btn btn-primary btn-sm expand-btn">Cancel Event</button>
+            <button onClick={viewDetails} className="btn btn-primary btn-sm expand-btn">View Details</button>
                     </>
     } else if (user.id === event.author_id) {
         buttons =   <>
-            <button onClick={signUp} className="btn btn-primary btn-sm">Sign Up</button>
-            <button onClick={cancelEvent} className="btn btn-primary btn-sm">Cancel Event</button>
-            <button onClick={viewDetails} className="btn btn-primary btn-sm">View Details</button>
+            <button onClick={signUp} className="btn btn-primary btn-sm expand-btn">Sign Up</button>
+            <button onClick={cancelEvent} className="btn btn-primary btn-sm expand-btn">Cancel Event</button>
+            <button onClick={viewDetails} className="btn btn-primary btn-sm expand-btn">View Details</button>
                     </>
     } else {
         buttons =   <>
-            <button onClick={signUp} className="btn btn-primary btn-sm">Sign Up</button>
+            <button onClick={signUp} className="btn btn-primary btn-sm expand-btn">Sign Up</button>
                     </>
     }
 
 
     return (
         <Row>
-            <Col sm><h3>{event.title}</h3></Col>
-            <Col sm><p>{event.description}</p></Col>
-            <Col sm><h6>Starts: {moment(startDay).format('ddd, MMM Do YYYY')} at {formatTime(startTime)}</h6></Col>
-            <Col sm>{buttons}</Col>
+            <Col sm={2}><h3>{event.title}</h3></Col>
+            <Col sm={5}><p>{event.description}</p></Col>
+            <Col sm={3}><h6>Starts: 
+                <br />
+                <br />
+                {moment(startDay).format('ddd, MMM Do YYYY')} 
+                <br />
+                @ {formatTime(startTime)}</h6></Col>
+            <Col sm={2}>{buttons}</Col>
         </Row>
     );
 }

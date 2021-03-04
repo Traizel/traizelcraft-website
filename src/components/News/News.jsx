@@ -20,7 +20,7 @@ function News() {
 
     let newArticleButton;
     if (user.access_level >= 3) {
-        newArticleButton = <button className='btn btn-primary' onClick={() => { history.push('./add-article') }}>New Article</button>;
+        newArticleButton = <button className="btn btn-outline-secondary" onClick={() => { history.push('./add-article') }}>New Article</button>;
     } else {
         newArticleButton = <></>
     }
