@@ -17,3 +17,12 @@
 .forum-item:hover {
     cursor: pointer;
 }
+
+.policy-page-image img {
+    width: 40%;
+    border-radius: 10px;
+}
+
+h6 {
+    text-align: center;
+}

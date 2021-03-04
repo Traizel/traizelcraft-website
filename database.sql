@@ -92,6 +92,7 @@ CREATE TABLE "signups" (
 
 
 
+ALTER TABLE "user" ADD CONSTRAINT user_unique UNIQUE ("username");
 
 ALTER TABLE "event" ADD CONSTRAINT "event_fk0" FOREIGN KEY ("author_id") REFERENCES "user"("id");
 
