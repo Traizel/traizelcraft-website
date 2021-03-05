@@ -2,6 +2,7 @@ import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { Row, Container } from 'react-bootstrap';
 import './Events.css';
 
 function EventDetails() {
@@ -19,13 +20,13 @@ function EventDetails() {
     return (
         <div className='sign-up'>
             <h1>Signed up list:</h1>
-            <ul>
+            <Container>
                 {details.map(signup =>
                     (
-                    <li key={signup.id}>Discord Name: {signup.discord_name} --- In Game Name: {signup.in_game_name}</li>
+                    <Row key={signup.id}><p>Discord Name: <strong className='text-warning'>{signup.discord_name}</strong> | In Game Name: <strong className='text-warning'>{signup.in_game_name}</strong></p></Row>
                     )
                 )}
-            </ul>
+            </Container>
             <button onClick={() => { history.goBack() }} className="btn btn-outline-warning go-back">Go Back</button>
         </div>
     );

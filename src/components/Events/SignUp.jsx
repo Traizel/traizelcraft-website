@@ -40,19 +40,21 @@ function SignUpForm() {
         <div className='sign-up'>
             <h1>Signing Up for {currentEvent[0] ? currentEvent[0].title : 'N/A'}</h1>
             <form className='add-event-form' onSubmit={signUp}>
-                <h4>Discord Name: </h4>
+                <br />
+                <h4>Discord Name (Please include Hashtags): </h4>
                     <input
                     className='form-control'
-                    placeholder='Discord Name'
+                    placeholder='Example: Username#1234'
                     type='text'
                     value={discord}
                     onChange={(event) => setDiscord(event.target.value)}
                     required />
+                    <br />
 
                 <h4>In Game Username: </h4>
                     <input
                     className='form-control'
-                    placeholder='In Game Name'
+                    placeholder='Example: Username_1234'
                     type='text'
                     value={inGame}
                     onChange={(event) => setInGame(event.target.value)}

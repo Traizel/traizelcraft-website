@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# TraizelCraft Official Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+_Duration: 2 Weeks_
 
-In the project directory, you can run:
+This is the official GitHub repo for the TraizelCraft Website. The TraizelCraft Website is a centerpiece for TraizelCraft Network, where the community can come together to
+talk, share, and have fun! There are several pages:
 
-### `npm start`
+- Home
+- Events
+- News
+- FAQ
+- Wiki
+- Forums
+- Downloads
+- Extras
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The Home page is the main page users go to when navigating to the url. It will contain the main info, as well as some videos and links to social medias.
+The Events page is a way to let Traizel and any Collaborators setup events for the community to participate in. Users may view and sign up for any event.
+The News page is managed by Traizel and his Moderators/Admins. Users can view any up to date articles that are posted here.
+The Forums is a nice way to talk with others in the community. The threaded setup makes it easy to navigate the forums, and talk with others about certain topics.
+The FAQ, Wiki, and Downloads pages are purely for information. The Downloads page contains all of the downloads for TraizelCraft and any Addons by Traizel. Users must have an account to access this page.
+Extra pages, like the login/registration or the add events/add article pages are soley situational pages that will be accessible when needed.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+- [Node.js](https://nodejs.org/en/)
+- [Express.js](https://expressjs.com/)
+- Axios
+- Nodemon
+- React
+- Redux
+- PassportJS
+- Postgres SQL
+- React Router
+- Material UI
+- Popper UI
+- ByCryptJS
+- BootStrap
+- Cookie Session
+- DotENV
+- PostgreSQL
+- SweetAlert
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
+ 
+1. Open up your editor of choice and run an `npm install`
+2. Run `npm run server` in your terminal
+3. In another terminal, run `npm run client` to boot up the client side
+5. Your browser should automatically go to `localhost:3000`
 
-### `npm run build`
+## Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. You will first be in the home page. Navigate to the login/register page in the top right of the screen and either login or create an account.
+2. Once you have an account, you may explore the pages
+3. Users with higher access may do more, like manage events or create News Articles
+4. The average user may only view anything except threads. Anyone may create a thread and comment on one
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Built With
 
-### `npm run eject`
+- NodeJS
+- ExpressJS
+- PostgreSQL
+- React
+- Redux
+- PassportJS
+- ByCryptJS
+- Cookie Session
+- DotENV
+- React Router
+- Material UI
+- Popper UI
+- Nodemon
+- Postico
+- Postman
+- Visual studio Code
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgement
+Thanks to [Emerging Digital Academy](https://www.emergingacademy.org/) who equipped and helped me to make this application a reality.
