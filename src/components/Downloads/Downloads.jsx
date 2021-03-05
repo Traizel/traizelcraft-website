@@ -6,13 +6,14 @@ function Faq() {
     const history = useHistory();
 
     return (
-        <div className='policy-section sign-up'>
+        <div className='policy-section'>
             <div className='header'>
                 <h1>Downloads</h1>
                 <div className='policy-page-image'>
                     <img src="./images/Darkreach1.JPG" />
                 </div>
             </div>
+            <div className='sign-up'>
                 <br />
                 <br />
                 <h1>Traizel's Addons</h1>
@@ -171,6 +172,7 @@ function Faq() {
                         <a href="https://www.mediafire.com/file/e9ws2unja5laz75/Early_TraizelCraft.mcworld/file" className="text-warning">Download</a></Col>
                 </Row>
             </Container>
+            </div>
             <div className='white-space'><h1>-</h1></div>
         </div>
     );

@@ -22,6 +22,7 @@ import EventDetails from '../Events/EventDetails';
 import PrivacyPolicy from '../PrivacyPolicy/PrivacyPolicy';
 import FAQ from '../FAQ/FAQ';
 import Downloads from '../Downloads/Downloads';
+import Wiki from '../Wiki/Wiki';
 import './App.css';
 import {
   HashRouter as Router,
@@ -116,6 +117,14 @@ function App() {
             path="/faq"
           >
             <FAQ />
+          </Route>
+
+          <Route
+            // shows News at all times (logged in or not)
+            exact
+            path="/wiki"
+          >
+            <Wiki />
           </Route>
 
           <ProtectedRoute

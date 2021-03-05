@@ -35,13 +35,13 @@ function ForumPostItem() {
         <div className='forum-main'>
             <form onSubmit={addComment}>
             <input 
-            class="col-form-label col-form-label-sm long-input"
+            className="col-form-label col-form-label-sm long-input"
             placeholder='Add Comment'
             type='text'
             value={comment}
             onChange={(event) => setComment(event.target.value)} 
             required />
-                <button type='submit' class="btn btn-secondary">Send</button>
+                <button type='submit' className="btn btn-secondary">Send</button>
             </form>
             <Container>
                 {comments.map(comment =>

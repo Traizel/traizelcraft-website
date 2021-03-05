@@ -14,12 +14,20 @@ router.post('/', (req, res) => {
     .query(query, [category])
     .then((result) => {
       console.log(result.rows);
+      req.session.threads = req.session.threads || 'n/a';
+      req.session.threads = result.rows;
       res.send(result.rows);
     })
     .catch((error) => {
       console.log(`Error on query ${error}`);
       res.sendStatus(500);
     });
+});
+
+router.post('/getsessionthreads', (req, res) => {
+  req.session.threads = req.session && req.session.threads || 0;
+  const {threads} = req.session;
+  res.send({threads});
 });
 
 router.post('/add', (req, res) => {

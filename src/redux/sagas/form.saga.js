@@ -46,6 +46,15 @@ function* addThread(action) {
     }
 }
 
+function* fetchSessionThreads() {
+    try {
+        const detailsResponse = yield axios.post('/api/threads/getsessionthreads');
+        yield put({ type: 'SET_THREADS', payload: detailsResponse.data.threads});
+    } catch (error) {
+        console.log(`Error fetching threads`, error);
+    }
+}
+
 function* addComment(action) {
     try {
         console.log(action.payload);
@@ -56,12 +65,23 @@ function* addComment(action) {
     }
 }
 
+function* fetchSessionComments() {
+    try {
+        const detailsResponse = yield axios.post('/api/comments/getsessioncomments');
+        yield put({ type: 'SET_COMMENTS', payload: detailsResponse.data.comments});
+    } catch (error) {
+        console.log(`Error fetching comments`, error);
+    }
+}
+
 function* loginSaga() {
     yield takeEvery('FETCH_CATEGORIES', fetchForumCategories);
     yield takeEvery('FETCH_THREADS', fetchThreads);
     yield takeEvery('FETCH_COMMENTS', fetchComments);
     yield takeEvery('ADD_THREAD', addThread);
     yield takeEvery('ADD_COMMENT', addComment);
+    yield takeEvery('GET_SESSION_THREADS', fetchSessionThreads);
+    yield takeEvery('GET_SESSION_COMMENTS', fetchSessionComments);
 }
 
 export default loginSaga;

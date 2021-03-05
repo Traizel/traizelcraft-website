@@ -12,6 +12,7 @@ function EventDetails() {
 
     useEffect(() => {
         dispatch({ type: 'GET_CURRENT_EVENT' });
+        dispatch({ type: 'GET_SESSION_DETAILS' });
     }, []);
 
 
@@ -21,7 +22,7 @@ function EventDetails() {
             <ul>
                 {details.map(signup =>
                     (
-                        <li key={signup.id}>Discord Name: {signup.discord_name} --- In Game Name: {signup.in_game_name}</li>
+                    <li key={signup.id}>Discord Name: {signup.discord_name} --- In Game Name: {signup.in_game_name}</li>
                     )
                 )}
             </ul>

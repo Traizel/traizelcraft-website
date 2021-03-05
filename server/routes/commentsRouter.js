@@ -15,12 +15,20 @@ router.post('/', (req, res) => {
     .query(query, [comments])
     .then((result) => {
       console.log(result.rows);
+      req.session.comments = req.session.comments || 'n/a';
+      req.session.comments = result.rows;
       res.send(result.rows);
     })
     .catch((error) => {
       console.log(`Error on query ${error}`);
       res.sendStatus(500);
     });
+});
+
+router.post('/getsessioncomments', (req, res) => {
+  req.session.comments = req.session && req.session.comments || 0;
+  const {comments} = req.session;
+  res.send({comments});
 });
 
 router.post('/add', (req, res) => {

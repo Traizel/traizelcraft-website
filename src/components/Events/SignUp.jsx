@@ -32,12 +32,13 @@ function SignUpForm() {
 
     useEffect(() => {
         dispatch({ type: 'GET_CURRENT_EVENT' });
+        dispatch({ type: 'GET_SESSION_SIGN_UP' });
     }, [])
 
 
     return (
         <div className='sign-up'>
-            <h1>Signing Up for {currentEvent[0].title}</h1>
+            <h1>Signing Up for {currentEvent[0] ? currentEvent[0].title : 'N/A'}</h1>
             <form className='add-event-form' onSubmit={signUp}>
                 <h4>Discord Name: </h4>
                     <input

@@ -14,6 +14,7 @@ function Thread() {
 
     useEffect(() => {
         dispatch({ type: 'GET_CURRENT_CATEGORY'});
+        dispatch({ type: 'GET_SESSION_THREADS' });
     }, [])
 
     const createThread = () => {

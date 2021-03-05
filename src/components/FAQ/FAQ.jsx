@@ -5,15 +5,16 @@ function Faq() {
     const history = useHistory();
 
     return (
-        <div className='policy-section sign-up'>
+        <div className='policy-section'>
             <div className='header'>
                 <h1>FAQ</h1>
-                <div className='policy-page-image'>
+                <div className='news-page-image'>
                     <img src="./images/Townhall1.JPG" />
                 </div>
+            </div>
                 <br />
                 <br />
-                <div>
+                <div className='sign-up'>
                     <h1 className="text-success">Frequently Asked Questions</h1>
                     <br />
                     <div className="card border-info mb-3">
@@ -73,7 +74,6 @@ function Faq() {
                     </div>
                     <br />
                 </div>
-            </div>
         </div>
     );
 }

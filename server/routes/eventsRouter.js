@@ -83,12 +83,22 @@ router.post('/getsignups', rejectUnauthenticated, (req, res) => {
     .query(query, [currentEvent])
     .then((result) => {
       console.log(result.rows);
+      req.session.signups = req.session.signups || 'n/a';
+      req.session.signups = result.rows;
       res.send(result.rows);
     })
     .catch((error) => {
       console.log(`Error on query ${error}`);
       res.sendStatus(500);
     });
+    }
+});
+
+router.post('/getsessionsignups', rejectUnauthenticated, (req, res) => {
+    if (req.user.access_level >= 1) {
+  req.session.signups = req.session && req.session.signups || 0;
+  const {signups} = req.session;
+  res.send({signups});
     }
 });
 
@@ -117,12 +127,22 @@ router.post('/getdetails', rejectUnauthenticated, (req, res) => {
     .query(query, [currentEvent])
     .then((result) => {
       console.log(result.rows);
+      req.session.details = req.session.details || 'n/a';
+      req.session.details = result.rows;
       res.send(result.rows);
     })
     .catch((error) => {
       console.log(`Error on query ${error}`);
       res.sendStatus(500);
     });
+    }
+});
+
+router.post('/getsessiondetails', rejectUnauthenticated, (req, res) => {
+    if (req.user.access_level >= 1) {
+  req.session.details = req.session && req.session.details || 0;
+  const {details} = req.session;
+  res.send({details});
     }
 });
 

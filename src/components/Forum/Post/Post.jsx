@@ -10,7 +10,8 @@ function Post() {
     const history = useHistory();
 
     useEffect(() => {
-        dispatch({ type: 'FETCH_USERS' })
+        dispatch({ type: 'FETCH_USERS' });
+        dispatch({ type: 'GET_SESSION_COMMENTS' });
     }, [])
 
     return (

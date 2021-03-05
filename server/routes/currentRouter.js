@@ -20,7 +20,7 @@ router.get('/event', (req, res) => {
 router.post('/thread', (req,res) => {
   console.log(req.body.thread);
   // This is defensive code
-  // It is checking req.session.totalClicks to see if it exists. If so, use that number. If not, use n/a
+  // It is checking req.session.thread to see if it exists. If so, use that number. If not, use n/a
   req.session.thread = req.session.thread || 'n/a';
   req.session.thread = req.body.thread;
   res.sendStatus(200);
