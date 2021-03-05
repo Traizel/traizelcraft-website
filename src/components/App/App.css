@@ -33,3 +33,7 @@ h6 {
 .white-space {
     margin-bottom: 30px;
 }
+
+.inline {
+    display: inline-block;
+}

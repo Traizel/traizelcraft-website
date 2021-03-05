@@ -90,9 +90,9 @@ function EventsItem({event}) {
 
     return (
         <Row>
-            <Col sm={2}><h3>{event.title}</h3></Col>
+            <Col sm={2}><h3 className='more-margin text-success'>{event.title}</h3></Col>
             <Col sm={5}><p>{event.description}</p></Col>
-            <Col sm={3}><h6>Starts: 
+            <Col sm={3} className="text-danger"><h6><strong className='more-margin'>Starts: </strong>
                 <br />
                 <br />
                 {moment(startDay).format('ddd, MMM Do YYYY')} 

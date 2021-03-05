@@ -21,7 +21,7 @@ function ForumThreadsItem({ thread }) {
 
     return (
         <Row onClick={toPost} className='forum-item'>
-            <Col sm={9}><h2>{thread.title}</h2></Col>
+            <Col sm={9}><h2 className='more-margin text-warning'>{thread.title}</h2></Col>
             <Col sm={3}><p>Posted:
                 <br />
                 {moment(thread.timestamp).fromNow()}</p></Col>

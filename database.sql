@@ -1,6 +1,6 @@
 CREATE TABLE "user" (
 	"id" serial NOT NULL,
-	"username" TEXT NOT NULL,
+	"username" TEXT NOT NULL UNIQUE,
 	"password" TEXT NOT NULL,
 	"join_date" TIMESTAMP NOT NULL,
 	"access_level" integer NOT NULL,
@@ -30,6 +30,7 @@ CREATE TABLE "news" (
 	"id" serial NOT NULL,
 	"title" TEXT NOT NULL,
 	"description" TEXT NOT NULL,
+	"timestamp" TIMESTAMP NOT NULL,
 	"img_name" TEXT NOT NULL,
 	"img_url" TEXT NOT NULL,
 	"author_id" integer NOT NULL,
@@ -92,7 +93,6 @@ CREATE TABLE "signups" (
 
 
 
-ALTER TABLE "user" ADD CONSTRAINT user_unique UNIQUE ("username");
 
 ALTER TABLE "event" ADD CONSTRAINT "event_fk0" FOREIGN KEY ("author_id") REFERENCES "user"("id");
 

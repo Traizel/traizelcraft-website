@@ -20,7 +20,7 @@ function ForumCategoriesItem({ category }) {
 
     return (
         <Row onClick={toThread} className='forum-item'>
-            <Col sm={4}><h2>{category.title}</h2></Col>
+            <Col sm={4}><h2 className='more-margin text-success'>{category.title}</h2></Col>
             <Col sm={8}><p>{category.description}</p></Col>
         </Row>
     );

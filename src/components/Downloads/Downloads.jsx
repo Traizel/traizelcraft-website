@@ -35,7 +35,7 @@ function Faq() {
                 <Container>
                     <Row>
                         <Col><h5 className="text-info">Hide N Seek</h5>
-                            <p>Traizel's Hide & Seek Add-On that allow ANYTHING to be turned into a Hide N Seek map! ANYTHING!</p>
+                            <p>Traizel's Hide N Seek Add-On that allow ANYTHING to be turned into a Hide N Seek map! ANYTHING!</p>
                             <a href="https://www.mediafire.com/file/dk0of9oklgz7mhi/Traizel%2527s_HideNSeek.mcpack/file" className="text-warning">Download</a></Col>
                     </Row>
                 </Container>
@@ -57,14 +57,14 @@ function Faq() {
                         <a href="https://www.mediafire.com/file/o2a6uso4wkalduc/TraizelCraft_3.3_Template.mcworld/file" className="text-warning">Download</a></Col>
                     <Col>
                     <div className='downloads-page-image'>
-                        <img src="./images/Darkreach1.JPG" />
+                        <img src="./images/Template.webp" />
                     </div>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         <div className='downloads-page-image'>
-                            <img src="./images/landscape1.JPG" />
+                            <img src="./images/Java.webp" />
                         </div>
                     </Col>
                     <Col><h5 className="text-success">TraizelCraft for Java 1.16</h5>
@@ -77,14 +77,14 @@ function Faq() {
                         <a href="https://www.mediafire.com/file/7tszf3wqbt6zdyo/TraizelCraft_3.3-_RPG_Update.mcworld/file" className="text-warning">Download</a></Col>
                     <Col>
                         <div className='downloads-page-image'>
-                            <img src="./images/Darkreach1.JPG" />
+                            <img src="./images/RPGUpdate.webp" />
                         </div>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         <div className='downloads-page-image'>
-                            <img src="./images/landscape1.JPG" />
+                            <img src="./images/Explorers3.webp" />
                         </div>
                     </Col>
                     <Col><h5 className="text-success">TraizelCraft 3.2- Explorer's Update 3</h5>
@@ -97,14 +97,14 @@ function Faq() {
                         <a href="https://www.mediafire.com/file/3kus706blnynute/TraizelCraft_3.1.9-_End_of_Season_3.mcworld/file" className="text-warning">Download</a></Col>
                     <Col>
                         <div className='downloads-page-image'>
-                            <img src="./images/Darkreach1.JPG" />
+                            <img src="./images/EOS3.webp" />
                         </div>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         <div className='downloads-page-image'>
-                            <img src="./images/landscape1.JPG" />
+                            <img src="./images/Explorers2.webp" />
                         </div>
                     </Col>
                     <Col><h5 className="text-success">TraizelCraft 3.1- Explorer's Update 2</h5>
@@ -117,14 +117,14 @@ function Faq() {
                         <a href="https://www.mediafire.com/file/0q2uxmx164tggpd/TraizelCraft_3.0.9-_End_of_Season_2.mcworld/file" className="text-warning">Download</a></Col>
                     <Col>
                         <div className='downloads-page-image'>
-                            <img src="./images/Darkreach1.JPG" />
+                            <img src="./images/EOS2.webp" />
                         </div>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         <div className='downloads-page-image'>
-                            <img src="./images/landscape1.JPG" />
+                            <img src="./images/Explorers1.webp" />
                         </div>
                     </Col>
                     <Col><h5 className="text-success">TraizelCraft 3.0- Explorer's Update</h5>
@@ -137,14 +137,14 @@ function Faq() {
                         <a href="https://www.mediafire.com/file/dcxgwhex64kdnbx/TraizelCraft_2.9-_Variety_Update.mcworld/file" className="text-warning">Download</a></Col>
                     <Col>
                         <div className='downloads-page-image'>
-                            <img src="./images/Darkreach1.JPG" />
+                            <img src="./images/VarietyUpdate.webp" />
                         </div>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         <div className='downloads-page-image'>
-                            <img src="./images/landscape1.JPG" />
+                            <img src="./images/RealmUpdate.webp" />
                         </div>
                     </Col>
                     <Col><h5 className="text-success">TraizelCraft 2.8- The Realm Update</h5>
@@ -157,14 +157,14 @@ function Faq() {
                         <a href="https://www.mediafire.com/file/qy5z4uk593ov7wu/TraizelCraft_2.7-_Pre_Realm.mcworld/file" className="text-warning">Download</a></Col>
                     <Col>
                         <div className='downloads-page-image'>
-                            <img src="./images/Darkreach1.JPG" />
+                            <img src="./images/PreRealm.webp" />
                         </div>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         <div className='downloads-page-image'>
-                            <img src="./images/landscape1.JPG" />
+                            <img src="./images/EarlyTCraft.webp" />
                         </div>
                     </Col>
                     <Col><h5 className="text-success">Early TraizelCraft</h5>

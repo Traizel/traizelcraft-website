@@ -7,6 +7,18 @@
     font-size: 200%;
 }
 
+.margin-top {
+    margin-top: 20px;
+}
+
+.more-margin {
+    margin: 20px;
+}
+
+.lesser-margin {
+    margin: 10px;
+}
+
 p {
     margin: 10px 15%;
     font-size: 24px;
@@ -17,8 +29,8 @@ p {
     justify-content: center;
     background-color: #363232ce;
     border-radius: 20px;
-    margin: 30px 3%;
-    padding: 5px;
+    margin: 30px 2%;
+    padding: 3px;
 }
 
 .row img {

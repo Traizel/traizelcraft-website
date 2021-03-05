@@ -2,6 +2,7 @@ import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './News.css';
 import { Row, Col } from 'react-bootstrap';
+import moment from 'moment';
 
 function NewsItem({ article }) {
 
@@ -10,11 +11,20 @@ function NewsItem({ article }) {
 
 
     return (
-        <Row>
-            <Col sm={2}><img src={article.img_url}/></Col>
-            <Col sm={2}><h3>{article.title}</h3></Col>
-            <Col sm={8} className='small-text'><p>{article.description}</p></Col>
+    <>
+        <Row className='inline'>  
+                    <img src={article.img_url} className='news-img'/>  
         </Row>
+        <Row className='inline'>
+            <Col>
+                <Row>
+                    <Col sm={2} className="text-warning"><h3>{article.title}</h3></Col>
+                    <Col sm={8} className='small-text'><p>{article.description}</p></Col>
+                    <Col sm={2} className="text-info"><p>{moment(article.timestamp).format('MMM Do, YYYY')}</p></Col>
+                </Row>
+            </Col>
+        </Row>
+    </>
     );
 }
 
