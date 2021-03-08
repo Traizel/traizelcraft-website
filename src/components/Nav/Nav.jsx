@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
+import UserPage from '../UserPage/UserPage';
 import './Nav.css';
 import {useSelector} from 'react-redux';
 
@@ -41,11 +42,11 @@ function Nav() {
             FAQ
             </Link>
         </>
-        <>
+        {/* <>
           <Link className="navLink" to="/wiki">
             Wiki
             </Link>
-        </>
+        </> */}
         <>
           <Link className="navLink" to="/forum">
             Forums
@@ -54,7 +55,13 @@ function Nav() {
         <Link className="navLink" to={loginLinkData.path}>
           {loginLinkData.text}
         </Link>
-
+        {user.id && (
+          <>
+            <Link className="navLink" to="/user">
+              Profile
+          </Link>
+          </>
+        )}
         {user.id && (
           <>
             <LogOutButton className="navLink" />

@@ -33,6 +33,24 @@ router.post('/register', (req, res, next) => {
     });
 });
 
+// Handles POST request with new user data
+// The only thing different from this and every other post we've seen
+// is that the password gets encrypted before being inserted
+router.put('/updatepassword', rejectUnauthenticated, (req, res, next) => {
+  const password = encryptLib.encryptPassword(req.body.password);
+  const userId = req.body.user;
+
+  const queryText = `UPDATE "user" SET "password" = $1
+    WHERE id = $2 RETURNING id`;
+  pool
+    .query(queryText, [password, userId])
+    .then(() => res.sendStatus(204))
+    .catch((err) => {
+      console.log('User update password failed: ', err);
+      res.sendStatus(500);
+    });
+});
+
 // Handles login form authenticate/login POST
 // userStrategy.authenticate('local') is middleware that we run on this route
 // this middleware will run our POST if successful

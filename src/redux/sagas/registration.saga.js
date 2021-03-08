@@ -22,8 +22,23 @@ function* registerUser(action) {
   }
 }
 
+function* updatePassword(action) {
+  try {
+    // clear any existing error on the profile page
+    yield put({ type: 'CLEAR_PROFILE_ERROR' });
+
+    // passes the password from the payload to the server
+    yield axios.put('/api/user/updatepassword', action.payload);
+
+  } catch (error) {
+    console.log('Error with updating password:', error);
+    yield put({ type: 'UPDATE_PASSWORD_FAILED' });
+  }
+}
+
 function* registrationSaga() {
   yield takeLatest('REGISTER', registerUser);
+  yield takeLatest('UPDATE_PASSWORD', updatePassword);
 }
 
 export default registrationSaga;

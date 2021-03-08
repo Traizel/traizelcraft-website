@@ -25,7 +25,7 @@ function Thread() {
         <div className='forum-main'>
             <Header />
             <button onClick={() => { history.goBack() }} className="btn btn-outline-warning go-back">Go Back</button>
-            <button onClick={createThread} class="btn btn-outline-info">Create Thread</button>
+            <button onClick={createThread} className="btn btn-outline-info">Create Thread</button>
             <Container>
                 {threads.map(thread =>
                     (<ThreadItem thread={thread} key={thread.id} />)

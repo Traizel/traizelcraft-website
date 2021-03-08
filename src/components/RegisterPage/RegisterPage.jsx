@@ -16,7 +16,7 @@ function RegisterPage() {
         <h3>Already a member?</h3>
         <button
           type="button"
-          className="btn btn_asLink"
+          className="btn btn-outline-info"
           onClick={() => {
             history.push('/login');
           }}
@@ -24,7 +24,7 @@ function RegisterPage() {
           Login
         </button>
       </center>
-      <button onClick={() => { history.goBack() }} className="btn btn-primary go-back" >Go Back</button>
+      <button onClick={() => { history.goBack() }} className="btn btn-outline-warning go-back" >Go Back</button>
     </div>
   );
 }

@@ -32,10 +32,26 @@ const registrationMessage = (state = '', action) => {
   }
 };
 
+// updatePassword holds the string that will display
+// on the profile screen if there's an error
+const updatePassword = (state = '', action) => {
+  switch (action.type) {
+    case 'CLEAR_PROFILE_ERROR':
+      return '';
+    case 'UPDATE_PASSWORD_INPUT_ERROR':
+      return 'Choose a username and password!';
+    case 'UPDATE_PASSWORD_FAILED':
+      return "Oops! That didn't work. Try again!";
+    default:
+      return state;
+  }
+};
+
 // make one object that has keys loginMessage, registrationMessage
 // these will be on the redux state at:
 // state.errors.loginMessage and state.errors.registrationMessage
 export default combineReducers({
   loginMessage,
   registrationMessage,
+  updatePassword,
 });
