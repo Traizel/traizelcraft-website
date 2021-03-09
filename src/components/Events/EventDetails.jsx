@@ -13,7 +13,7 @@ function EventDetails() {
 
     useEffect(() => {
         dispatch({ type: 'GET_CURRENT_EVENT' });
-        dispatch({ type: 'GET_SESSION_DETAILS' });
+        setTimeout(function () { dispatch({ type: 'GET_SESSION_DETAILS' }) }, 300);
     }, []);
 
 

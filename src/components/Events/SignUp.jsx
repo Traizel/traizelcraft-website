@@ -32,7 +32,7 @@ function SignUpForm() {
 
     useEffect(() => {
         dispatch({ type: 'GET_CURRENT_EVENT' });
-        dispatch({ type: 'GET_SESSION_SIGN_UP' });
+        setTimeout(function () { dispatch({ type: 'GET_SESSION_SIGN_UP' }) }, 300);
     }, [])
 
 

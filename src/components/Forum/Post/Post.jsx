@@ -11,7 +11,7 @@ function Post() {
 
     useEffect(() => {
         dispatch({ type: 'FETCH_USERS' });
-        dispatch({ type: 'GET_SESSION_COMMENTS' });
+        setTimeout(function () { dispatch({ type: 'GET_SESSION_COMMENTS' }) }, 300);
     }, [])
 
     return (

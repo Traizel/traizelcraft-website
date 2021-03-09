@@ -31,18 +31,27 @@ function ForumPostItem() {
         setComment('');
     }
 
+    let forum = <></>
+
+    if (user.id) {
+        forum = 
+        <>
+                <form onSubmit={addComment}>
+                    <input
+                        className="col-form-label col-form-label-sm long-input"
+                        placeholder='Add Comment'
+                        type='text'
+                        value={comment}
+                        onChange={(event) => setComment(event.target.value)}
+                        required />
+                    <button type='submit' className="btn btn-secondary">Send</button>
+                </form>
+        </>
+    }
+
     return (
         <div className='forum-main'>
-            <form onSubmit={addComment}>
-            <input 
-            className="col-form-label col-form-label-sm long-input"
-            placeholder='Add Comment'
-            type='text'
-            value={comment}
-            onChange={(event) => setComment(event.target.value)} 
-            required />
-                <button type='submit' className="btn btn-secondary">Send</button>
-            </form>
+            {forum}
             <Container>
                 {comments.map(comment =>
                     (<CommentsItem comment={comment} key={comment.id} />)

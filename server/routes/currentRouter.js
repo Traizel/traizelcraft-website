@@ -29,6 +29,7 @@ router.post('/thread', (req,res) => {
 router.get('/thread', (req, res) => {
   req.session.thread = req.session && req.session.thread || 0;
   const {thread} = req.session;
+  console.log({thread});
   res.send({thread});
 });
 

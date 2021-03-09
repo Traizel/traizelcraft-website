@@ -7,7 +7,6 @@ import Header from '../ForumHeader/ForumHeader';
 function ForumCategories() {
 
     const categories = useSelector(store => store.form.ForumCategoriesReducer)
-    console.log(categories);
     const dispatch = useDispatch();
 
     useEffect(() => {
