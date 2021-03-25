@@ -9,7 +9,7 @@ function Faq() {
         <div className='policy-section'>
             <div className='header'>
                 <h1>Downloads</h1>
-                <div className='policy-page-image'>
+                <div className='news-page-image'>
                     <img src="./images/Darkreach1.JPG" />
                 </div>
             </div>
@@ -50,7 +50,7 @@ function Faq() {
                 <h1>TraizelCraft Downloads</h1>
                 <h4>Download any version of TraizelCraft as early as 2014!</h4>
                 <p>By downloading any TraizelCraft Network™ content, you agree to the TraizelCraft Network™ <span onClick={() => { history.push('/privacy-policy') }} className='forum-item'><u>Privacy Policy</u></span> and that this content is not your property, and you will not claim these as your own or anything of similar nature. Please note that the current version of TraizelCraft is not available for download. Join Traizel's Realm to play the current version!</p>
-            <Container>
+            <Container className="traizelcraft-downloads">
                 <Row>
                     <Col><h5 className="text-success">TraizelCraft Template</h5>
                         <p>This version is completely reset and data wiped! It is meant if you want to have a fresh copy to use for hosting a server or world yourself! Traizel has included some tools to help you learn how to manage TraizelCraft as an owner. This version is using the 3.3 Update.</p>

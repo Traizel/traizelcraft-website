@@ -27,11 +27,11 @@ function Nav() {
         <Link className="navLink" to='/'>
           Home
         </Link>
-        <>
+        {/* <>
           <Link className="navLink" to="/events">
             Events
             </Link>
-        </>
+        </> */}
         <>
           <Link className="navLink" to="/news">
             News
@@ -47,11 +47,11 @@ function Nav() {
             Wiki
             </Link>
         </> */}
-        <>
+        {/* <>
           <Link className="navLink" to="/forum">
             Forums
           </Link>
-        </>
+        </> */}
         <Link className="navLink" to={loginLinkData.path}>
           {loginLinkData.text}
         </Link>

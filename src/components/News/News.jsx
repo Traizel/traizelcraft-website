@@ -33,7 +33,7 @@ function News() {
                 <img src="./images/TraizelStatue1.JPG" />
             </div>
             <div>
-                <p>The news page is a list of all up to date info on TraizelCraft Network! 
+                <p className="news-p">The news page is a list of all up to date info on TraizelCraft Network! 
                     Come here for updates, patch notes, future plans, teasers, and more!</p>
             </div>
             {newArticleButton}

@@ -53,13 +53,13 @@ function App() {
             <Home />
           </Route>
           {/* Visiting localhost:3000/ will show the home page. */}
-          <ProtectedRoute
+          <ProtectedAdminRoute
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/events"
           >
             <Events />
-          </ProtectedRoute>
+          </ProtectedAdminRoute>
 
           {/* Visiting localhost:3000/news will show the news page. */}
           <Route
@@ -71,13 +71,13 @@ function App() {
           </Route>
 
           {/* Visiting localhost:3000/forum will show the forum page. */}
-          <Route
+          <ProtectedAdminRoute
             // shows Forum at all times (logged in or not)
             exact
             path="/forum"
           >
             <Forum />
-          </Route>
+          </ProtectedAdminRoute>
 
           <Route
             // shows News at all times (logged in or not)
