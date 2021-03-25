@@ -18,7 +18,7 @@ function Home() {
                     The world is currently envisioned to be a massive RPG world with an immersive story that will link everything together. 
                     The next update, the DarkReach Update, will do just that. 
                     The update is projected to launch sometime Summer 2021. 
-                    Join the Discord and follow TraizelCraft on Twiter and Insta for more updates!</p>
+                    Join the Discord Community and follow TraizelCraft on Twiter and Insta for more updates!</p>
             </div>
             <br />
             <div className='home-page-image'>
